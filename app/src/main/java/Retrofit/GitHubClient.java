@@ -1,4 +1,4 @@
-package com.example.capston.Retrofit;
+package Retrofit;
 
 import java.util.List;
 
