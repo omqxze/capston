@@ -25,7 +25,7 @@ public class login extends AppCompatActivity {
     Context mContext;
     public login(Context context) {
         mContext = context;
-       TextView textview = ((MainActivity) mContext).textView;
+       TextView textView = ((MainActivity) mContext).findViewById(R.id.textView);
         Retrofit retrofit =new Retrofit.Builder()
                 .baseUrl("https://api.github.com/")
                 .addConverterFactory(GsonConverterFactory.create())
