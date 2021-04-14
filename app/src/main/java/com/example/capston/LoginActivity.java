@@ -1,62 +1,73 @@
 package com.example.capston;
 
-//0.0.6
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
-import android.widget.TextView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
-import Retrofit.GitHubClient;
-import Retrofit.GitHubRepo;
-
-import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
+import Login.LoginCheck;
+import Login.loginInfo;
+import Retrofit.conRetrofit;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+
 
 public class LoginActivity extends AppCompatActivity {
-    Context mContext;
-    public LoginActivity(Context context) {
-        mContext = context;
-       TextView textView = ((MainActivity) mContext).findViewById(R.id.textView);
-        Retrofit retrofit =new Retrofit.Builder()
-                .baseUrl("https://api.github.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+    private EditText userId, userPass;
+    private Button login_button;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+        userId = findViewById(R.id.userId);
+        userPass = findViewById(R.id.userPass);
+        login_button = findViewById(R.id.loginBtn);
+        login_button.setOnClickListener(view -> {
+            String id = userId.getText().toString();
+            String pass = userPass.getText().toString();
 
-        GitHubClient client = retrofit.create(GitHubClient.class);
+            LoginCheck client = conRetrofit.getApiClient().create(LoginCheck.class);
+            Call<loginInfo> call = client.setPostField(id, pass);
+            call.enqueue(new Callback<loginInfo>() {
+                @Override
+                public void onResponse(Call<loginInfo> call, Response<loginInfo> response) {
 
-        Call<List<GitHubRepo>> call = client.reposForUser("omqxze");
-
-        call.enqueue(new Callback<List<GitHubRepo>>() {
-            @Override
-            public void onFailure(@NotNull Call<List<GitHubRepo>> call, @NonNull Throwable t) {
-                Log.e("debugTest","error:(${t.message})");
-            }
-
-            @Override
-            public void onResponse(Call<List<GitHubRepo>>call, Response<List<GitHubRepo>> response) {
-                if(response.isSuccessful() && response.body()!=null){
-                    List<GitHubRepo> repos = response.body();
-                    String reposStr = "";
-                    if (repos!=null){
-                        for (GitHubRepo it:repos
-                        ) {
-                            reposStr += it.name + '\n';
-                        }
+                    switch (response.code()){
+                        case 200:
+                            Toast.makeText(LoginActivity.this,"로그인",Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                            break;
+                        case 404:
+                            Toast.makeText(LoginActivity.this,"로그인 실패 : 서버 오류",Toast.LENGTH_SHORT).show();
+                            break;
+                        case 500:
+                            Toast.makeText(LoginActivity.this,"이메일 인증이 필요합니다",Toast.LENGTH_SHORT).show();
+                            break;
+                        case 600:
+                            Toast.makeText(LoginActivity.this,"아이디와 비밀번호를 확인해주세요",Toast.LENGTH_SHORT).show();
+                            userId.setText("");
+                            userPass.setText("");
+                            break;
                     }
-                    textView.setText(reposStr);
                 }
 
-            }
+                @Override
+                public void onFailure(@NonNull Call<loginInfo> call,@NonNull Throwable t) {
+                    Log.e("debugTest","error:(${t.message})");
+                }
+            });
+
         });
     }
 }
