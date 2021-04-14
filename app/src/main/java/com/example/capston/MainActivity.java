@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.os.Bundle;
 import android.widget.TextView;
-import com.example.capston.Retrofit.GitHubClient;
 
 public class MainActivity extends AppCompatActivity {
         public static Context context_main;

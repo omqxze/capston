@@ -8,8 +8,8 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.example.capston.Retrofit.GitHubClient;
-import com.example.capston.Retrofit.GitHubRepo;
+import Retrofit.GitHubClient;
+import Retrofit.GitHubRepo;
 
 import org.jetbrains.annotations.NotNull;
 
