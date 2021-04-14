@@ -1,6 +1,6 @@
 package com.example.capston;
 
-//0.0.5
+//0.0.6
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
