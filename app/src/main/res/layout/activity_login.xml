@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="187dp"
+        android:layout_height="59dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:shadowColor="@color/black"
+        android:shadowRadius="5"
+        android:text="K G U 카 유"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="112dp"
+        tools:layout_editor_absoluteY="336dp" />
+
+    <EditText
+        android:id="@+id/userId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint=" @kyonggi.ac.kr"
+        android:inputType="textEmailAddress"
+        android:textAlignment="viewEnd"
+        tools:layout_editor_absoluteX="145dp"
+        tools:layout_editor_absoluteY="413dp" />
+
+    <EditText
+        android:id="@+id/userPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="145dp"
+        tools:layout_editor_absoluteY="455dp" />
+
+    <TextView
+        android:id="@+id/Email"
+        android:layout_width="90dp"
+        android:layout_height="34dp"
+        android:text="E-mail"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="421dp" />
+
+    <TextView
+        android:id="@+id/Password"
+        android:layout_width="91dp"
+        android:layout_height="31dp"
+        android:text="Password"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="469dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="423dp"
+        android:layout_height="147dp"
+        app:srcCompat="@mipmap/doro"
+        tools:layout_editor_absoluteX="-5dp"
+        tools:layout_editor_absoluteY="4dp" />
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="150dp"
+        android:layout_height="64dp"
+        android:backgroundTint="#9C000000"
+        android:text="로그인"
+        android:textSize="16sp"
+        app:rippleColor="#00FFFFFF"
+        tools:layout_editor_absoluteX="205dp"
+        tools:layout_editor_absoluteY="577dp" />
+
+    <Button
+        android:id="@+id/joinBtn"
+        android:layout_width="150dp"
+        android:layout_height="64dp"
+        android:backgroundTint="#9C000000"
+        android:text="회원가입"
+        android:textSize="16sp"
+        app:rippleColor="#00FFFFFF"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="577dp" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/car"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="174dp" />
+
+    <CheckBox
+        android:id="@+id/autologin"
+        android:layout_width="132dp"
+        android:layout_height="48dp"
+        android:text="자동 로그인"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="516dp" />
+
+    <Button
+        android:id="@+id/searchBtn"
+        android:layout_width="173dp"
+        android:layout_height="55dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="아이디/비밀번호 찾기"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        tools:layout_editor_absoluteX="182dp"
+        tools:layout_editor_absoluteY="511dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
