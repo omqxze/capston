@@ -21,9 +21,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     Context mContext;
-    public login(Context context) {
+    public LoginActivity(Context context) {
         mContext = context;
        TextView textView = ((MainActivity) mContext).findViewById(R.id.textView);
         Retrofit retrofit =new Retrofit.Builder()
@@ -34,7 +34,7 @@ public class login extends AppCompatActivity {
 
         GitHubClient client = retrofit.create(GitHubClient.class);
 
-        Call<List<GitHubRepo>> call = client.reposForUser("wonseok5893");
+        Call<List<GitHubRepo>> call = client.reposForUser("omqxze");
 
         call.enqueue(new Callback<List<GitHubRepo>>() {
             @Override

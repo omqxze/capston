@@ -12,6 +12,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TextView textView = (TextView) findViewById(R.id.textView);
-        login Login = new login(this);
+        LoginActivity LoginActivity = new LoginActivity(this);
         }
         }
