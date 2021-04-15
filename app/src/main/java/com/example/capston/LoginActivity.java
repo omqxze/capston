@@ -34,13 +34,13 @@ public class LoginActivity extends AppCompatActivity {
         login_button.setOnClickListener(view -> {
             String id = userId.getText().toString();
             String pass = userPass.getText().toString();
-
+            Log.e("함 보자고","아이디"+id+"비번"+pass);
             LoginCheck client = conRetrofit.getApiClient().create(LoginCheck.class);
             Call<loginInfo> call = client.setPostField(id, pass);
             call.enqueue(new Callback<loginInfo>() {
                 @Override
                 public void onResponse(Call<loginInfo> call, Response<loginInfo> response) {
-
+                    Log.e("뭐 오는지",""+response.code());
                     switch (response.code()){
                         case 200:
                             Toast.makeText(LoginActivity.this,"로그인",Toast.LENGTH_SHORT).show();
@@ -48,10 +48,10 @@ public class LoginActivity extends AppCompatActivity {
                             startActivity(intent);
                             finish();
                             break;
-                        case 404:
+                        case 500:
                             Toast.makeText(LoginActivity.this,"로그인 실패 : 서버 오류",Toast.LENGTH_SHORT).show();
                             break;
-                        case 500:
+                        case 404:
                             Toast.makeText(LoginActivity.this,"이메일 인증이 필요합니다",Toast.LENGTH_SHORT).show();
                             break;
                         case 600:

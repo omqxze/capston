@@ -11,7 +11,7 @@ import retrofit2.http.POST;
 public interface LoginCheck {
 
     @FormUrlEncoded
-    @POST("/Webapp/Login/")
+    @POST("LoginCheck.php")
     Call<loginInfo> setPostField(
             @Field("userId") String userId,
             @Field("userPass") String userPass
