@@ -40,10 +40,13 @@ public class LoginActivity extends AppCompatActivity {
             call.enqueue(new Callback<loginInfo>() {
                 @Override
                 public void onResponse(Call<loginInfo> call, Response<loginInfo> response) {
-                    Log.e("뭐 오는지",""+response.code());
+                    Log.e("오는지",""+response.code());
+                    Log.e("오는지",response.message());
                     switch (response.code()){
-                        case 200:
-                            Toast.makeText(LoginActivity.this,"로그인",Toast.LENGTH_SHORT).show();
+                        case 777:
+                            Log.e("뭐 오는지",""+response.code());
+                            Log.e("뭐 오는지",response.body().toString());
+                            Toast.makeText(LoginActivity.this,"로그인 되었습니다",Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
                             finish();
@@ -51,19 +54,32 @@ public class LoginActivity extends AppCompatActivity {
                         case 500:
                             Toast.makeText(LoginActivity.this,"로그인 실패 : 서버 오류",Toast.LENGTH_SHORT).show();
                             break;
-                        case 404:
-                            Toast.makeText(LoginActivity.this,"이메일 인증이 필요합니다",Toast.LENGTH_SHORT).show();
-                            break;
-                        case 600:
-                            Toast.makeText(LoginActivity.this,"아이디와 비밀번호를 확인해주세요",Toast.LENGTH_SHORT).show();
+                        case 334:
+                            Toast.makeText(LoginActivity.this,"비밀번호가 틀렸습니다",Toast.LENGTH_SHORT).show();
                             userId.setText("");
                             userPass.setText("");
+                            break;
+                        case 333:
+                            Toast.makeText(LoginActivity.this,"아이디가 틀렸습니다",Toast.LENGTH_SHORT).show();
+                            userId.setText("");
+                            userPass.setText("");
+                            break;
+                        case 335:
+                            Toast.makeText(LoginActivity.this,"이메일 인증이 필요합니다",Toast.LENGTH_SHORT).show();
+                            break;
+                        case 888:
+                            Toast.makeText(LoginActivity.this,"로그인 되었습니다",Toast.LENGTH_SHORT).show();
+                            Intent intent1 = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(intent1);
+                            finish();
                             break;
                     }
                 }
 
                 @Override
                 public void onFailure(@NonNull Call<loginInfo> call,@NonNull Throwable t) {
+                    Log.e("오는지",""+t.getMessage());
+                    Log.e("오는지",t.getLocalizedMessage());
                     Log.e("debugTest","error:(${t.message})");
                 }
             });
