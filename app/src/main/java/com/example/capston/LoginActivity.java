@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
                     Log.e("오는지",""+response.code());
                     Log.e("오는지",response.message());
                     Log.e("바디",response.body().getResult()+" ");
-                    switch (response.code()){
+                    switch (response.body().getResult()){
                         case 777:
                             Log.e("뭐 오는지",""+response.code());
                             Log.e("뭐 오는지",response.body().getResult()+"");
