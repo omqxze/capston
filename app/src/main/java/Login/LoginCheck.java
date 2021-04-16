@@ -1,7 +1,5 @@
 package Login;
 
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -12,7 +10,7 @@ public interface LoginCheck {
 
     @FormUrlEncoded
     @POST("LoginCheck.php")
-    Call<loginInfo> setPostField(
+    Call<LoginInfo> setPostField(
             @Field("userId") String userId,
             @Field("userPass") String userPass
     );

@@ -13,7 +13,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import Login.*;
-import Util.*;
 
 import Retrofit.conRetrofit;
 import retrofit2.*;
@@ -37,14 +36,14 @@ public class LoginActivity extends AppCompatActivity {
             String pass = userPass.getText().toString();
             Log.e("함 보자고","아이디"+id+"비번"+pass);
             LoginCheck client = conRetrofit.getApiClient().create(LoginCheck.class);
-            Call<loginInfo> call = client.setPostField(id, pass);
-            call.enqueue(new Callback<loginInfo>() {
+            Call<LoginInfo> call = client.setPostField(id, pass);
+            call.enqueue(new Callback<LoginInfo>() {
                 @Override
-                public void onResponse(Call<loginInfo> call, Response<loginInfo> response) {
+                public void onResponse(Call<LoginInfo> call, Response<LoginInfo> response) {
                     Log.e("오는지",""+response.code());
                     Log.e("오는지",response.message());
                     Log.e("바디",response.body().getResult()+" ");
-                    switch (response.body().getResult()){
+                    switch (Integer.parseInt(response.body().getResult())){
                         case 777:
                             Log.e("뭐 오는지",""+response.code());
                             Log.e("뭐 오는지",response.body().getResult()+"");
@@ -79,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onFailure(@NonNull Call<loginInfo> call,@NonNull Throwable t) {
+                public void onFailure(@NonNull Call<LoginInfo> call, @NonNull Throwable t) {
                     Log.e("오는지",""+t.getMessage());
                     Log.e("오는지",t.getLocalizedMessage());
                     Log.e("debugTest","error:(${t.message})");
