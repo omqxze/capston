@@ -4,30 +4,37 @@ package com.example.capston;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import Login.LoginCheck;
-import Login.loginInfo;
-import Retrofit.conRetrofit;
+import Login.*;
+import Util.*;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import Retrofit.conRetrofit;
+import retrofit2.*;
 
 
 public class LoginActivity extends AppCompatActivity {
     private EditText userId, userPass;
     private Button login_button;
+    private View view;
+    private Layout layout;
+    private HideKeyBoard hd;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         userId = findViewById(R.id.userId);
         userPass = findViewById(R.id.userPass);
         login_button = findViewById(R.id.loginBtn);
@@ -42,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
                 public void onResponse(Call<loginInfo> call, Response<loginInfo> response) {
                     Log.e("오는지",""+response.code());
                     Log.e("오는지",response.message());
+                    if (response.isSuccessful())
                     switch (response.code()){
                         case 777:
                             Log.e("뭐 오는지",""+response.code());
