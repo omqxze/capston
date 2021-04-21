@@ -11,13 +11,6 @@ import retrofit2.http.Query;
 
 public interface LoginCheck {
     @Headers("Content-Type: application/json")
-/*
-    @POST("LoginCheck.php")
-    Call<LoginInfo> setPostField(
-            @Query("userId") String userId,
-            @Query("userPass") String userPass
-    );
-    */
     @POST("LoginCheck.php")
     Call<LoginInfo> getJsonString(@Body LoginJsonObject loginJsonObject);
 }

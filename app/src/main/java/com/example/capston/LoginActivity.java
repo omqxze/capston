@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Base64;
@@ -32,7 +33,7 @@ import retrofit2.*;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText userId, userPass;
-    private Button loginBtn;
+    private Button loginBtn,searchBtn;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -42,13 +43,12 @@ public class LoginActivity extends AppCompatActivity {
 
         userId = findViewById(R.id.userId);
         userPass = findViewById(R.id.userPass);
+
         loginBtn = findViewById(R.id.loginBtn);
         loginBtn.setOnClickListener(view -> {
             String id = userId.getText().toString();
             String pass = userPass.getText().toString();
             byte[] data=pass.getBytes();
-
-            Log.e("함 보자고","아이디"+id+"비번"+Base64.encodeToString(data,Base64.DEFAULT));
             LoginCheck client = conRetrofit.getApiClient().create(LoginCheck.class);
             LoginJsonObject loginJsonObject=new LoginJsonObject(id, Base64.encodeToString(data,Base64.DEFAULT));
             Call<LoginInfo> call = client.getJsonString(loginJsonObject);
@@ -56,14 +56,10 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<LoginInfo> call, Response<LoginInfo> response) {
                     LoginInfo res=response.body();
-                    Log.e("오는지",""+response.code());
-                    Log.e("오는지",response.message());
-                    Log.e("바디",response.body().getResult()+" ");
+
                     switch (res.getResult()){
                         case "444":
-                            Log.e("뭐 오는지",""+response.code());
-                            Log.e("뭐 오는지",response.body().getResult()+"");
-                            Toast.makeText(LoginActivity.this,"로그인 되었습니다",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this,"로그인 되었습니다(탑승자)",Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
                             finish();
@@ -101,6 +97,13 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
 
+        });
+
+        searchBtn=findViewById(R.id.searchBtn);
+        searchBtn.setOnClickListener(view->{
+            Intent intent = new Intent(LoginActivity.this, SearchIdActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
 }

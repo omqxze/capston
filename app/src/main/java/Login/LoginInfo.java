@@ -14,5 +14,8 @@ public class LoginInfo {
     @Getter @Setter
     private String result;
 
-
+    @Expose
+    @SerializedName("userStunum")
+    @Getter @Setter
+    private String userStunum;
 }
