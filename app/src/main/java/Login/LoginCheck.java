@@ -8,7 +8,6 @@ import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
-
 public interface LoginCheck {
     @Headers("Content-Type: application/json")
     @POST("LoginCheck.php")
