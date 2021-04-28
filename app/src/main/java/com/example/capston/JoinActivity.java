@@ -3,7 +3,6 @@ package com.example.capston;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Base64;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -27,7 +26,7 @@ public class JoinActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding= DataBindingUtil.setContentView(this,R.layout.activity_join);
+        DataBindingUtil.setContentView(this,R.layout.activity_join);
 
         binding.registerBtn.setOnClickListener(view->{
             JoinAPI client = conRetrofit.getApiClient().create(JoinAPI.class);
