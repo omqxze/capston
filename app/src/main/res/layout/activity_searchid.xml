@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/IdBtn"
+        android:id="@+id/PassBtn"
         android:layout_width="96dp"
         android:layout_height="53dp"
         android:backgroundTint="#093990"
@@ -64,7 +64,7 @@
         app:layout_constraintVertical_bias="0.293" />
 
     <EditText
-        android:id="@+id/userStunum"
+        android:id="@+id/userStunum2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -91,7 +91,7 @@
         tools:layout_editor_absoluteY="22dp" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/searchPass"
         android:layout_width="133dp"
         android:layout_height="45dp"
         android:text="비밀번호"
