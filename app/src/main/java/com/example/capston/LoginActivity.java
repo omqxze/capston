@@ -2,22 +2,20 @@ package com.example.capston;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Base64;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import com.example.capston.databinding.ActivityLoginBinding;
 import Login.*;
 import Retrofit.conRetrofit;
 import retrofit2.*;
+import Util.BASE64;
 
 /*
 400 json 오류
@@ -36,17 +34,18 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        DataBindingUtil.setContentView(this,R.layout.activity_login);
-        Toolbar toolbar = binding.toolbar;
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        binding=DataBindingUtil.setContentView(this,R.layout.activity_login);
+
+        setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         binding.loginBtn.setOnClickListener(view -> {
             String id = binding.userId.getText().toString();
-            byte[] pass = binding.userPass.getText().toString().getBytes();
+            String pass = binding.userPass.getText().toString();
             LoginCheck client = conRetrofit.getApiClient().create(LoginCheck.class);
-            LoginJsonObject loginJsonObject=new LoginJsonObject(id, Base64.encodeToString(pass,Base64.DEFAULT));
+            LoginJsonObject loginJsonObject=new LoginJsonObject(id,new BASE64().encode(pass));
+            Log.e("hi",loginJsonObject.toString());
             Call<LoginInfo> call = client.getJsonString(loginJsonObject);
             call.enqueue(new Callback<LoginInfo>() {
                 @Override
