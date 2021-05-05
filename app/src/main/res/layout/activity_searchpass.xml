@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.578" />
 
     <Button
-        android:id="@+id/IdBtn"
+        android:id="@+id/PassBtn"
         android:layout_width="96dp"
         android:layout_height="53dp"
         android:backgroundTint="#093990"
@@ -78,7 +78,7 @@
         app:layout_constraintVertical_bias="0.293" />
 
     <EditText
-        android:id="@+id/userStunum"
+        android:id="@+id/userStunum2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -93,7 +93,7 @@
         app:layout_constraintVertical_bias="0.4" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/uesrId2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -108,7 +108,7 @@
         app:layout_constraintVertical_bias="0.491" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/userName2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
