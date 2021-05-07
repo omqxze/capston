@@ -14,19 +14,7 @@ public class MainActivity extends AppCompatActivity {
         @SuppressLint("ClickableViewAccessibility")
         @Override
         protected void onCreate(Bundle savedInstanceState) {
-                super.onCreate(savedInstanceState);
-                binding=DataBindingUtil.setContentView(this,R.layout.activity_main);
-                binding.setActivity(this);
 
-                binding.nextActivity.setOnClickListener(v -> {
-                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                        startActivity(intent);
-                });
-
-               binding.nextActivity2.setOnClickListener(v -> {
-                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                        startActivity(intent);
-                });
 
         }
 

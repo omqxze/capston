@@ -84,14 +84,19 @@
             android:id="@+id/searchId"
             android:layout_width="133dp"
             android:layout_height="45dp"
+            android:layout_marginEnd="28dp"
             android:text="아이디"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="84dp"
-            tools:layout_editor_absoluteY="22dp"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/searchPass"
+            app:layout_constraintHorizontal_bias="0.79"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.023"
+             />
 
         <TextView
             android:id="@+id/searchPass"
@@ -102,9 +107,13 @@
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="236dp"
-            tools:layout_editor_absoluteY="22dp"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintHorizontal_bias="0.879"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.023"
+             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

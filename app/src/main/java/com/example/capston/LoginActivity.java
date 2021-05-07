@@ -40,6 +40,10 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
+        Intent secondIntent = getIntent();
+        String message = secondIntent.getStringExtra("userId");
+        binding.userId.setText(message);
+
         binding.loginBtn.setOnClickListener(view -> {
             String id = binding.userId.getText().toString();
             String pass = binding.userPass.getText().toString();
