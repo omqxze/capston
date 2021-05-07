@@ -1,158 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
-    //상단바의 세줄 버튼 누르면 가는 화면
+    xmlns:tools="http://schemas.android.com/tools">
 
-    //상단 고정
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="66dp" >
+    <data>
 
-        <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="67dp"
-            android:background="#3A5077"
-            android:text="메인화면"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-
-        </androidx.appcompat.widget.Toolbar>
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="fill_parent"
-        android:layout_height="700dp">
-
-        <ImageView
-            android:scaleType="fitXY"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@mipmap/road"
-            android:backgroundTint="#ffffff"/>
-
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/mypage_img"
-                android:layout_width="wrap_content"
-                android:layout_height="130dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="40dp"
-                android:background="@android:color/transparent"
-                android:src="@mipmap/roadsign" />
-
-            <TextView
-                android:id="@+id/mypage_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_alignLeft="@id/mypage_img"
-                android:layout_alignTop="@id/mypage_img"
-                android:layout_alignRight="@id/mypage_img"
-                android:layout_alignBottom="@id/mypage_img"
-                android:layout_marginLeft="-9dp"
-
-                android:layout_marginTop="-32dp"
-                android:layout_marginRight="9dp"
-                android:layout_marginBottom="32dp"
-                android:gravity="center"
-                android:text="MY PAGE"
-                android:textColor="#000000"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:typeface="sans" />
-
-            <ImageButton
-                android:id="@+id/info_img"
-                android:layout_width="wrap_content"
-                android:layout_height="120dp"
-                android:layout_marginLeft="250dp"
-                android:layout_marginTop="260dp"
-                android:background="@android:color/transparent"
-                android:src="@mipmap/roadsign" />
-
-            <TextView
-                android:id="@+id/info_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_alignLeft="@id/info_img"
-                android:layout_alignTop="@id/info_img"
-                android:layout_alignRight="@id/info_img"
-                android:layout_alignBottom="@id/info_img"
-                android:layout_marginLeft="-9dp"
-
-                android:layout_marginTop="-32dp"
-                android:layout_marginRight="9dp"
-                android:layout_marginBottom="32dp"
-                android:gravity="center"
-                android:text="안내 사항"
-                android:textColor="#000000"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:typeface="sans" />
-
-            <ImageButton
-                android:id="@+id/past_img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="480dp"
-                android:background="@android:color/transparent"
-                android:src="@mipmap/roadsign" />
-
-            <TextView
-                android:id="@+id/past_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_alignLeft="@id/past_img"
-                android:layout_alignTop="@id/past_img"
-                android:layout_alignRight="@id/past_img"
-                android:layout_alignBottom="@id/past_img"
-                android:layout_marginLeft="-9dp"
-
-                android:layout_marginTop="-32dp"
-                android:layout_marginRight="9dp"
-                android:layout_marginBottom="32dp"
-                android:gravity="center"
-                android:text="이용 내역"
-                android:textColor="#000000"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:typeface="sans" />
-
-        </RelativeLayout>
-    </FrameLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:itemIconTint="#000"
-        app:itemTextColor="#000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:menu="@menu/bottom_menu" />
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+        //상단바의 세줄 버튼 누르면 가는 화면
 
+        //상단 고정
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="66dp">
+
+            <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:background="#3A5077"
+                android:text="메인화면"
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            </androidx.appcompat.widget.Toolbar>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="700dp">
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/road"
+                android:backgroundTint="#ffffff" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/mypage_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="130dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@android:color/transparent"
+                    android:src="@mipmap/roadsign" />
+
+                <TextView
+                    android:id="@+id/mypage_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignLeft="@id/mypage_img"
+                    android:layout_alignTop="@id/mypage_img"
+                    android:layout_alignRight="@id/mypage_img"
+                    android:layout_alignBottom="@id/mypage_img"
+                    android:layout_marginLeft="-9dp"
+
+                    android:layout_marginTop="-32dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_marginBottom="32dp"
+                    android:gravity="center"
+                    android:text="MY PAGE"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <ImageButton
+                    android:id="@+id/info_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="250dp"
+                    android:layout_marginTop="260dp"
+                    android:background="@android:color/transparent"
+                    android:src="@mipmap/roadsign" />
+
+                <TextView
+                    android:id="@+id/info_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignLeft="@id/info_img"
+                    android:layout_alignTop="@id/info_img"
+                    android:layout_alignRight="@id/info_img"
+                    android:layout_alignBottom="@id/info_img"
+                    android:layout_marginLeft="-9dp"
+
+                    android:layout_marginTop="-32dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_marginBottom="32dp"
+                    android:gravity="center"
+                    android:text="안내 사항"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <ImageButton
+                    android:id="@+id/past_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="480dp"
+                    android:background="@android:color/transparent"
+                    android:src="@mipmap/roadsign" />
+
+                <TextView
+                    android:id="@+id/past_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignLeft="@id/past_img"
+                    android:layout_alignTop="@id/past_img"
+                    android:layout_alignRight="@id/past_img"
+                    android:layout_alignBottom="@id/past_img"
+                    android:layout_marginLeft="-9dp"
+
+                    android:layout_marginTop="-32dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_marginBottom="32dp"
+                    android:gravity="center"
+                    android:text="이용 내역"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+            </RelativeLayout>
+        </FrameLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:itemIconTint="#000"
+            app:itemTextColor="#000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:menu="@menu/bottom_menu" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</layout>
