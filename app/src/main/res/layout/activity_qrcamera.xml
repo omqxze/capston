@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textView17"
         android:layout_width="414dp"
         android:layout_height="67dp"
         android:background="#3A5077"
@@ -19,7 +18,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/imageButton"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="68dp"
         android:layout_height="69dp"
@@ -48,13 +47,13 @@
         app:menu="@menu/bottom_menu" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/textView19"
         android:layout_width="212dp"
         android:layout_height="41dp"
         android:layout_marginStart="99dp"
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="10dp"
-        android:text="Past History"
+        android:text="QR Camera"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
@@ -64,46 +63,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.02" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="340dp"
-        android:layout_height="145dp"
-        android:background="#452D3E64"
-        android:backgroundTint="#452D3E64"
-        android:text="//과거 이용내역 넣을 칸"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="340dp"
-        android:layout_height="145dp"
-        android:background="#452D3E64"
-        android:backgroundTint="#452D3E64"
-        android:text="//"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="340dp"
-        android:layout_height="145dp"
-        android:background="#452D3E64"
-        android:backgroundTint="#452D3E64"
-        android:text="//"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.824" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
