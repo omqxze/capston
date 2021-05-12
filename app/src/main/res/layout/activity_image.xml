@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="1"
+        android:background="#ffffff"
+        tools:context=".MainActivity"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="프로필 사진"
+                android:layout_marginTop="20dp"
+                android:textSize="40sp"
+                android:gravity="center_horizontal"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="사진을 등록해주세요"
+                android:textSize="20sp"
+                android:gravity="center_horizontal"
+                android:textColor="#000000" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp"
+                >
+
+                <ImageView
+                    android:id="@+id/user_image"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:maxWidth="200dp"
+                    android:maxHeight="200dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_image"
+                    android:onClick="onClick" />
+
+                <Button
+                    android:id="@+id/btn_UploadPicture"
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="#3A5077"
+                    android:text="사진 선택"
+                    android:textColor="#ffffff"
+                    android:onClick="onClick"
+                    android:textSize="15sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+            </LinearLayout>
+            <Button
+                android:layout_width="285dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:id="@+id/btn_signupfinish"
+                android:text="사진 확인 완료"
+                android:textColor="#ffffff"
+                android:background="#3A5077"
+                android:onClick="onClick" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

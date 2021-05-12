@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -40,6 +41,16 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
+        SharedPreferences pref = getSharedPreferences("mine", MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putInt("permission",0);
+        int permission = pref.getInt("permission", 0);
+        if(permission == 1){
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
         Intent secondIntent = getIntent();
         String message = secondIntent.getStringExtra("userId");
         binding.userId.setText(message);
@@ -57,6 +68,11 @@ public class LoginActivity extends AppCompatActivity {
                     switch (response.body().getResult()){
                         case "444":
                             Toast.makeText(LoginActivity.this,"로그인 되었습니다(탑승자)",Toast.LENGTH_SHORT).show();
+                            if(binding.autologin.isChecked()){
+                                editor.putInt("permission",1);
+                                editor.apply();
+                                editor.commit();
+                            }
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
                             finish();
@@ -79,6 +95,11 @@ public class LoginActivity extends AppCompatActivity {
                             break;
                         case "555":
                             Toast.makeText(LoginActivity.this,"로그인 되었습니다",Toast.LENGTH_SHORT).show();
+                            if(binding.autologin.isChecked()){
+                                editor.putInt("permission",1);
+                                editor.apply();
+                                editor.commit();
+                            }
                             Intent intent1 = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent1);
                             finish();
