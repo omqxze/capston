@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Capston">
         <meta-data
             android:name="com.google.android.actions"
-            android:resource="@xml/textview_round" />
+            android:resource="@xml/textbox_line" />
 
         <activity android:name=".MainActivity">
             <intent-filter>

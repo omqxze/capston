@@ -28,6 +28,9 @@ android {
     }
 }
 
+buildFeatures {
+    dataBinding = true
+}
 dependencies {
     //noinspection GradleCompatible,GradleCompatible
     implementation 'com.android.support:design:28.0.0'
