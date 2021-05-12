@@ -40,7 +40,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:src="@mipmap/reserv" />
 
@@ -82,7 +82,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="50dp"
                 android:layout_height="66dp"
                 android:src="@mipmap/list" />
 
@@ -122,7 +122,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="50dp"
                 android:layout_height="66dp"
                 android:src="@mipmap/chat" />
 
