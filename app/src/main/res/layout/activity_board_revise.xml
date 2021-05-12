@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="카풀 예약 신청"
+            android:text="게시물 수정"
             android:textSize="30dp"
             android:textColor="#000000"
             android:textAlignment="center"
@@ -46,23 +46,22 @@
             android:layout_marginTop="20dp">
 
             <TextView
-                android:layout_marginTop="10dp"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="120dp"
+                android:layout_marginLeft="100dp"
                 android:text="출발 장소"
                 android:textColor="#000000"
                 android:textSize="17dp"
                 android:typeface="sans" />
 
-            <TextView
-                android:layout_marginTop="8dp"
-                android:layout_width="150dp"
-                android:layout_height="30dp"
-                android:text="//출발 장소 출력"
-                android:textColor="#000000"
-                android:textSize="12dp"
-                android:backgroundTint="#ffffff"/>
+            <EditText
+                android:hint="//출발 장소 출력"
+                android:id="@+id/start_location"
+                android:layout_width="154dp"
+                android:textSize="14dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
 
         </LinearLayout>
 
@@ -72,23 +71,22 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_marginTop="10dp"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="140dp"
+                android:layout_marginLeft="120dp"
                 android:text="시간"
                 android:textColor="#000000"
                 android:textSize="17dp"
                 android:typeface="sans" />
 
-            <TextView
-                android:layout_marginTop="8dp"
-                android:layout_width="150dp"
-                android:layout_height="30dp"
-                android:text="//출발 시간 출력"
-                android:textColor="#000000"
-                android:textSize="12dp"
-                android:backgroundTint="#ffffff"/>
+            <EditText
+                android:hint="//출발 시간 출력"
+                android:id="@+id/start_time"
+                android:layout_width="154dp"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
         </LinearLayout>
 
         <LinearLayout
@@ -97,23 +95,22 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_marginTop="10dp"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="120dp"
+                android:layout_marginLeft="100dp"
                 android:text="도착 장소"
                 android:textColor="#000000"
                 android:textSize="17dp"
                 android:typeface="sans" />
 
-            <TextView
-                android:layout_marginTop="8dp"
-                android:layout_width="150dp"
-                android:layout_height="30dp"
-                android:text="//도착 장소 출력"
-                android:textColor="#000000"
-                android:textSize="12dp"
-                android:backgroundTint="#ffffff"/>
+            <EditText
+                android:hint="//도착장소 출력"
+                android:id="@+id/arrive_location"
+                android:layout_width="154dp"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
         </LinearLayout>
 
         <LinearLayout
@@ -122,23 +119,45 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_marginTop="10dp"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="120dp"
+                android:layout_marginLeft="100dp"
                 android:text="탑승 인원"
                 android:textColor="#000000"
                 android:textSize="17dp"
                 android:typeface="sans" />
 
+            <EditText
+                android:hint="//인원수"
+                android:id="@+id/passenger"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
             <TextView
-                android:layout_marginTop="8dp"
-                android:layout_width="150dp"
-                android:layout_height="30dp"
-                android:text="//예약 가능 인원 출력"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:text="명"
                 android:textColor="#000000"
-                android:textSize="12dp"
-                android:backgroundTint="#ffffff"/>
+                android:textSize="17dp"
+                android:typeface="sans" />
+
+            <ImageButton
+                android:id="@+id/plus"
+                android:layout_marginTop="6dp"
+                android:layout_width="26dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#ffffff"
+                android:src="@mipmap/add"/>
+
+            <ImageButton
+                android:id="@+id/minus"
+                android:layout_marginTop="6dp"
+                android:layout_width="26dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#ffffff"
+                android:src="@mipmap/remove"/>
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="30dp"
@@ -151,7 +170,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:textAlignment="center"
-                android:text="내용"
+                android:text="추가 내용"
                 android:textColor="#000000"
                 android:textSize="17dp"
                 android:typeface="sans" />
@@ -163,13 +182,13 @@
             android:layout_marginLeft="30dp"
             android:orientation="horizontal">
 
-            <TextView
+            <EditText
                 android:id="@+id/content"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:gravity="top"
-                android:text="//운전자가 기입한 내용 출력"
+                android:hint="//입력했던 내용 출력"
                 android:background="@drawable/textbox"
                 />
         </LinearLayout>
@@ -182,20 +201,10 @@
             <Button
                 android:layout_width="60dp"
                 android:layout_height="50dp"
+                android:layout_marginLeft="320dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="260dp"
                 android:backgroundTint="#063E9F"
                 android:text="수정"
-                android:textStyle="bold"
-                android:typeface="sans" />
-
-            <Button
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="#C32835"
-                android:text="삭제"
                 android:textStyle="bold"
                 android:typeface="sans" />
         </LinearLayout>
