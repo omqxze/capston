@@ -16,7 +16,21 @@ public class MainActivity extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
                 binding=DataBindingUtil.setContentView(this,R.layout.activity_main);
+
+                binding.reservText.setOnClickListener(view->{
+                        Intent intent = new Intent(MainActivity.this, BoardActivity.class);
+                        startActivity(intent);
+                        finish();
+                });
+                binding.lateText.setOnClickListener(view->{
+                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                });
+                binding.chattingText.setOnClickListener(view->{
+                        Intent intent = new Intent(MainActivity.this, ChatBoardActivity.class);
+                        startActivity(intent);
+                        finish();
+                });
         }
-
-
 }
