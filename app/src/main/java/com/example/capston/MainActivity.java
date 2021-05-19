@@ -17,6 +17,10 @@ public class MainActivity extends AppCompatActivity {
                 super.onCreate(savedInstanceState);
                 binding=DataBindingUtil.setContentView(this,R.layout.activity_main);
 
+                setSupportActionBar(binding.toolbar);
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                getSupportActionBar().setDisplayShowTitleEnabled(false);
+
                 binding.reservText.setOnClickListener(view->{
                         Intent intent = new Intent(MainActivity.this, MainActivity.class);
                         startActivity(intent);

@@ -19,6 +19,10 @@ public class BoardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding= DataBindingUtil.setContentView(this,R.layout.activity_board);
 
+        setSupportActionBar(binding.toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
         binding.writeBtn.setOnClickListener(view->{
             Intent intent = new Intent(BoardActivity.this, BoardWriteActivity.class);
             startActivity(intent);

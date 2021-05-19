@@ -27,6 +27,17 @@
         <activity android:name=".SearchIdActivity" />
         <activity android:name=".SearchPassActivity"/>
         <activity android:name=".ImageActivity"/>
+        <activity android:name=".BoardActivity"/>
+        <activity android:name=".BoardWriteActivity"/>
+        <activity android:name=".BoardWritePopupActivity"/>
+        <activity android:name=".ChatBoardActivity"/>
+        <activity android:name=".EditMyPageActivity"/>
+        <activity android:name=".InfoActivity"/>
+        <activity android:name=".MyPageActivity"/>
+        <activity android:name=".PathHistoryActivity"/>
+        <activity android:name=".QRCameraActivity"/>
+        <activity android:name=".QRCodeActivity"/>
+
     </application>
 
 </manifest>

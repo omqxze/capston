@@ -8,22 +8,22 @@ import android.view.Window;
 
 import androidx.databinding.DataBindingUtil;
 
-import com.example.capston.databinding.BoardWritePopupBinding;
+import com.example.capston.databinding.ActivityReservPopupBinding;
 
-public class BoardWritePopupActivity extends Activity {
-    BoardWritePopupBinding binding;
+public class BoardReservPopupActivity extends Activity {
+    ActivityReservPopupBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        binding= DataBindingUtil.setContentView(this,R.layout.activity_board_write_popup);
+        binding= DataBindingUtil.setContentView(this,R.layout.activity_reserv_popup);
 
         Intent intent = getIntent();
         String data = intent.getStringExtra("data");
-        binding.txtText.setText(data+"님 등록이 완료되었습니다.");
+        binding.txtText.setText(data+"님 예약이 완료되었습니다.");
 
         binding.okBtn.setOnClickListener(view->{
-            Intent intentt = new Intent(BoardWritePopupActivity.this,BoardActivity.class);
+            Intent intentt = new Intent();
             intentt.putExtra("result", "Close Popup");
             setResult(RESULT_OK, intentt);
             finish();
@@ -37,7 +37,6 @@ public class BoardWritePopupActivity extends Activity {
         }
         return true;
     }
-
     @Override
     public void onBackPressed() {
         //안드로이드 백버튼 막기

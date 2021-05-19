@@ -14,6 +14,8 @@ public class EditMyPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding= DataBindingUtil.setContentView(this,R.layout.activity_editmypage);
 
+
+
         binding.imageButton4.setOnClickListener(view->{
             Intent intent = new Intent(EditMyPageActivity.this, MyPageActivity.class);
             startActivity(intent);

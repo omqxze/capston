@@ -35,6 +35,7 @@ public class SearchIdActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         binding= DataBindingUtil.setContentView(this,R.layout.activity_searchid);
+
         binding.userStunum.setOnClickListener(view->{
             binding.userStunum.setText(null);
         });

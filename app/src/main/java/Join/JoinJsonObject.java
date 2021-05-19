@@ -79,8 +79,8 @@ public class JoinJsonObject {
         setUserQR(null);
         setCarNum(user.carNum.getText().toString());
         setCarType(user.carType.getText().toString());
-        setCarLicence(null);
-        setCarInsurance(null);
+        setCarLicence(user.carLicense.getText().toString());
+        setCarInsurance(user.carInsurance.getText().toString());
     }
 
     @Override

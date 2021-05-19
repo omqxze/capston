@@ -19,6 +19,7 @@ public class QRCodeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding= DataBindingUtil.setContentView(this,R.layout.activity_qrcode);
 
+
         binding.imageButton2.setOnClickListener(view->{
             Intent intent = new Intent(QRCodeActivity.this, MainActivity.class);
             startActivity(intent);

@@ -37,10 +37,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding=DataBindingUtil.setContentView(this,R.layout.activity_login);
 
-        setSupportActionBar(binding.toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-
         SharedPreferences pref = getSharedPreferences("mine", MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
         editor.putInt("permission",0);
