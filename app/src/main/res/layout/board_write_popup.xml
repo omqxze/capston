@@ -61,6 +61,7 @@
             android:layout_height="wrap_content">
 
             <Button
+                android:id="@+id/okBtn"
                 android:text="확인"
                 android:textSize="15sp"
                 android:gravity="center"

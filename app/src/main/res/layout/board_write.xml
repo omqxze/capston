@@ -199,6 +199,7 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/write"
                     android:layout_width="60dp"
                     android:layout_height="50dp"
                     android:layout_marginLeft="320dp"

@@ -18,12 +18,12 @@ public class MainActivity extends AppCompatActivity {
                 binding=DataBindingUtil.setContentView(this,R.layout.activity_main);
 
                 binding.reservText.setOnClickListener(view->{
-                        Intent intent = new Intent(MainActivity.this, BoardActivity.class);
+                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();
                 });
                 binding.lateText.setOnClickListener(view->{
-                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                        Intent intent = new Intent(MainActivity.this, BoardActivity.class);
                         startActivity(intent);
                         finish();
                 });

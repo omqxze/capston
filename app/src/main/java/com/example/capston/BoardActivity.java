@@ -1,6 +1,7 @@
 package com.example.capston;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,11 @@ public class BoardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding= DataBindingUtil.setContentView(this,R.layout.activity_board);
 
+        binding.writeBtn.setOnClickListener(view->{
+            Intent intent = new Intent(BoardActivity.this, BoardWriteActivity.class);
+            startActivity(intent);
+            finish();
+        });
 
     }
 }
