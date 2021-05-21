@@ -36,6 +36,8 @@
         <activity android:name=".PathHistoryActivity"/>
         <activity android:name=".QRCameraActivity"/>
         <activity android:name=".QRCodeActivity"/>
+        <activity android:name=".GuideActivity"/>
+        <activity android:name=".ReservActivity"/>
 
     </application>
 
