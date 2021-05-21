@@ -3,21 +3,14 @@ package com.example.capston;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Base64;
 import android.util.Log;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.example.capston.databinding.ActivitySearchidBinding;
-
-import Login.LoginCheck;
-import Login.LoginInfo;
-import Login.LoginJsonObject;
 import Login.SearchIdAPI;
 import Login.SearchIdInfo;
 import Login.SearchIdJsonObject;
@@ -28,18 +21,30 @@ import retrofit2.Response;
 
 public class SearchIdActivity extends AppCompatActivity{
 
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: { //toolbar의 back키 눌렀을 때 동작
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
     ActivitySearchidBinding binding;
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         binding= DataBindingUtil.setContentView(this,R.layout.activity_searchid);
+        setSupportActionBar(binding.toolbar8);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         binding.userStunum.setOnClickListener(view->{
             binding.userStunum.setText(null);
         });
-        binding.IdBtn.setOnClickListener(view->{
+        binding.btnFindid.setOnClickListener(view->{
             if (binding.userStunum.getText().toString().equals("")){
                 Toast.makeText(SearchIdActivity.this,"학번을 입력해주세요",Toast.LENGTH_SHORT).show();
             }
@@ -76,10 +81,6 @@ public class SearchIdActivity extends AppCompatActivity{
                 finish();
             }
         });
-        binding.searchPass.setOnClickListener(view->{
-            Intent intent = new Intent(SearchIdActivity.this, SearchPassActivity.class);
-            startActivity(intent);
-            finish();
-        });
+
     }
 }

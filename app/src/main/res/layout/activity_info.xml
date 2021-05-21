@@ -26,11 +26,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="67dp"
                 android:background="#3A5077"
-                android:text="메인화면"
+                android:text="Information"
                 android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
             </androidx.appcompat.widget.Toolbar>
+
         </FrameLayout>
 
         <FrameLayout
@@ -67,9 +68,13 @@
                     android:layout_alignTop="@id/mypage_img"
                     android:layout_alignRight="@id/mypage_img"
                     android:layout_alignBottom="@id/mypage_img"
-                    android:layout_marginLeft="-9dp"
+                    android:layout_alignParentStart="true"
 
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="-9dp"
                     android:layout_marginTop="-32dp"
+                    android:layout_marginEnd="260dp"
                     android:layout_marginRight="9dp"
                     android:layout_marginBottom="32dp"
                     android:gravity="center"
@@ -83,8 +88,12 @@
                     android:id="@+id/info_img"
                     android:layout_width="wrap_content"
                     android:layout_height="120dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="250dp"
                     android:layout_marginLeft="250dp"
                     android:layout_marginTop="260dp"
+                    android:layout_marginEnd="21dp"
                     android:background="@android:color/transparent"
                     android:src="@mipmap/roadsign" />
 
@@ -97,9 +106,13 @@
                     android:layout_alignTop="@id/info_img"
                     android:layout_alignRight="@id/info_img"
                     android:layout_alignBottom="@id/info_img"
-                    android:layout_marginLeft="-9dp"
+                    android:layout_alignParentStart="true"
 
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="250dp"
+                    android:layout_marginLeft="-9dp"
                     android:layout_marginTop="-32dp"
+                    android:layout_marginEnd="30dp"
                     android:layout_marginRight="9dp"
                     android:layout_marginBottom="32dp"
                     android:gravity="center"
@@ -127,9 +140,13 @@
                     android:layout_alignTop="@id/past_img"
                     android:layout_alignRight="@id/past_img"
                     android:layout_alignBottom="@id/past_img"
-                    android:layout_marginLeft="-9dp"
+                    android:layout_alignParentStart="true"
 
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginLeft="-9dp"
                     android:layout_marginTop="-32dp"
+                    android:layout_marginEnd="250dp"
                     android:layout_marginRight="9dp"
                     android:layout_marginBottom="32dp"
                     android:gravity="center"

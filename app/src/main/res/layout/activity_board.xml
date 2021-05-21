@@ -17,13 +17,12 @@
             android:layout_width="match_parent"
             android:layout_height="66dp">
 
-            <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
+            <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="67dp"
                 android:background="#3A5077"
-                android:text="메인화면"
+                android:text="게시판"
                 android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
@@ -73,7 +72,6 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/writeBtn"
                     android:layout_width="60dp"
                     android:layout_height="50dp"
                     android:layout_marginLeft="320dp"

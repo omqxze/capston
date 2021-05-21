@@ -8,10 +8,11 @@ import android.view.Window;
 
 import androidx.databinding.DataBindingUtil;
 
-import com.example.capston.databinding.BoardWritePopupBinding;
+import com.example.capston.databinding.ActivityBoardWriteBinding;
+import com.example.capston.databinding.ActivityBoardWritePopupBinding;
 
 public class BoardWritePopupActivity extends Activity {
-    BoardWritePopupBinding binding;
+    ActivityBoardWritePopupBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);

@@ -4,15 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-
-import com.example.capston.databinding.ActivitySearchpwBinding;
-
-import Login.SearchIdAPI;
-import Login.SearchIdInfo;
-import Login.SearchIdJsonObject;
+import com.example.capston.databinding.ActivitySearchpassBinding;
 import Login.SearchPwAPI;
 import Login.SearchPwInfo;
 import Login.SearchPwJsonObject;
@@ -22,36 +16,41 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class SearchPassActivity extends AppCompatActivity {
-    ActivitySearchpwBinding binding;
+    ActivitySearchpassBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_searchpw);
-        binding.userStunum.setOnClickListener(view->{
-            binding.userStunum.setText(null);
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_searchpass);
+
+        setSupportActionBar(binding.toolbar6);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        binding.userStunum2.setOnClickListener(view->{
+            binding.userStunum2.setText(null);
         });
-        binding.userId.setOnClickListener(view->{
-            binding.userId.setText(null);
+        binding.userId2.setOnClickListener(view->{
+            binding.userId2.setText(null);
         });
-        binding.userName.setOnClickListener(view->{
-            binding.userName.setText(null);
+        binding.userName2.setOnClickListener(view->{
+            binding.userName2.setText(null);
         });
-        binding.IdBtn.setOnClickListener(view->{
-            if (binding.userStunum.getText().toString().equals("")){
+        binding.btnFindpass.setOnClickListener(view->{
+            if (binding.userStunum2.getText().toString().equals("")){
                 Toast.makeText(SearchPassActivity.this,"학번을 입력해주세요",Toast.LENGTH_SHORT).show();
             }
-            else if(binding.userId.getText().equals("")){
+            else if(binding.userId2.getText().equals("")){
                 Toast.makeText(SearchPassActivity.this,"아이디를 입력해주세요",Toast.LENGTH_SHORT).show();
             }
-            else if(binding.userName.getText().equals("")){
+            else if(binding.userName2.getText().equals("")){
                 Toast.makeText(SearchPassActivity.this,"이름을 입력해주세요",Toast.LENGTH_SHORT).show();
             }
             else {
                 Intent intent = new Intent(SearchPassActivity.this, SearchPassActivity.class);
                 startActivity(intent);
-                String stunum = binding.userStunum.getText().toString();
-                String id = binding.userId.getText().toString();
-                String name = binding.userName.getText().toString();
+                String stunum = binding.userStunum2.getText().toString();
+                String id = binding.userId2.getText().toString();
+                String name = binding.userName2.getText().toString();
                 SearchPwAPI client = conRetrofit.getApiClient().create(SearchPwAPI.class);
                 SearchPwJsonObject searchpwJsonObject = new SearchPwJsonObject(stunum, id, name);
                 Call<SearchPwInfo> call = client.getJsonString(searchpwJsonObject);

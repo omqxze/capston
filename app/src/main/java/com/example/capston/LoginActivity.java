@@ -61,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
             call.enqueue(new Callback<LoginInfo>() {
                 @Override
                 public void onResponse(Call<LoginInfo> call, Response<LoginInfo> response) {
+                    Log.e("hi",response.body().getResult());
                     switch (response.body().getResult()){
                         case "444":
                             Toast.makeText(LoginActivity.this,"로그인 되었습니다(탑승자)",Toast.LENGTH_SHORT).show();

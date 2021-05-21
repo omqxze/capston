@@ -3,55 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/passBtn3"
-            android:layout_width="96dp"
-            android:layout_height="53dp"
-            android:backgroundTint="#093990"
-            android:text="확인"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.914"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.894"
-            app:rippleColor="#00FFFFFF" />
-
-        <TextView
-            android:id="@+id/textView20"
-            android:layout_width="414dp"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar7"
+            android:layout_width="match_parent"
             android:layout_height="67dp"
             android:background="#3A5077"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.666"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <ImageButton
-            android:id="@+id/imageButton2"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="68dp"
-            android:layout_height="69dp"
-            android:layout_marginEnd="344dp"
-            android:backgroundTint="#3A5077"
+            android:text="메인화면"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@mipmap/back" />
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        </androidx.appcompat.widget.Toolbar>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavi"
@@ -68,24 +39,6 @@
             app:menu="@menu/bottom_menu" />
 
         <TextView
-            android:id="@+id/textView21"
-            android:layout_width="212dp"
-            android:layout_height="41dp"
-            android:layout_marginStart="99dp"
-            android:layout_marginEnd="100dp"
-            android:layout_marginBottom="10dp"
-            android:text="QR Code"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.02" />
-
-        <TextView
             android:id="@+id/textView22"
             android:layout_width="229dp"
             android:layout_height="234dp"
@@ -94,11 +47,11 @@
             app:layout_constraintBottom_toBottomOf="@+id/bottomNavi"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView20"
-            app:layout_constraintVertical_bias="0.597" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.626" />
 
         <Button
-            android:id="@+id/passBtn2"
+            android:id="@+id/btn_camera"
             android:layout_width="215dp"
             android:layout_height="55dp"
             android:backgroundTint="#6B86B6"
@@ -113,7 +66,7 @@
             app:rippleColor="#00FFFFFF" />
 
         <Button
-            android:id="@+id/passBtn4"
+            android:id="@+id/btn_createQR"
             android:layout_width="215dp"
             android:layout_height="55dp"
             android:backgroundTint="#6B86B6"

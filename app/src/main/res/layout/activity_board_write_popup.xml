@@ -37,6 +37,7 @@
 
             <TextView
                 android:id="@+id/txtText"
+                android:text="등록이 완료되었습니다."
                 android:textSize="15sp"
                 android:textColor="#000"
                 android:alpha="0.87"

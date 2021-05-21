@@ -8,8 +8,25 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar8"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:background="#3A5077"
+            android:text="아이디 찾기"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        </androidx.appcompat.widget.Toolbar>
+
         <Button
-            android:id="@+id/IdBtn"
+            android:id="@+id/btn_findid"
             android:layout_width="96dp"
             android:layout_height="53dp"
             android:backgroundTint="#093990"
@@ -22,32 +39,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.382"
             app:rippleColor="#00FFFFFF" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="414dp"
-            android:layout_height="67dp"
-            android:background="#3A5077"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.666"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <ImageButton
-            style="?android:attr/borderlessButtonStyle"
-            android:id="@+id/imageButton4"
-            android:layout_width="68dp"
-            android:layout_height="69dp"
-            android:backgroundTint="#3A5077"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@mipmap/back" />
 
         <TextView
             android:id="@+id/searchID"
@@ -79,41 +70,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.389" />
-
-        <TextView
-            android:id="@+id/searchId"
-            android:layout_width="133dp"
-            android:layout_height="45dp"
-            android:layout_marginEnd="28dp"
-            android:text="아이디"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/searchPass"
-            app:layout_constraintHorizontal_bias="0.79"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.023"
-             />
-
-        <TextView
-            android:id="@+id/searchPass"
-            android:layout_width="133dp"
-            android:layout_height="45dp"
-            android:text="비밀번호"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/textView"
-            app:layout_constraintHorizontal_bias="0.879"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.023"
-             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -26,7 +26,6 @@
         <activity android:name=".JoinActivity" />
         <activity android:name=".SearchIdActivity" />
         <activity android:name=".SearchPassActivity"/>
-        <activity android:name=".ImageActivity"/>
         <activity android:name=".BoardActivity"/>
         <activity android:name=".BoardWriteActivity"/>
         <activity android:name=".BoardWritePopupActivity"/>
