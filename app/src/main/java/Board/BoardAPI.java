@@ -9,6 +9,6 @@ import retrofit2.http.POST;
 
 public interface BoardAPI {
     @Headers("Content-Type: application/json")
-    @POST("PostRegi.php")
+    @POST("PostInfo.php")
     Call<BoardInfo> getJsonString(@Body BoardJsonObject boardJsonObject);
 }

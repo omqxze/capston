@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class conRetrofit {
-    public static final String BASE_URL = "http://118.67.130.73/";
+    public static final String BASE_URL = "https://www.kgucaru.site/";
     public static Retrofit retrofit;
 
     public static Retrofit getApiClient(){

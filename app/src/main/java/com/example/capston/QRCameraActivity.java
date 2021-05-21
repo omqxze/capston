@@ -16,13 +16,9 @@ public class QRCameraActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding= DataBindingUtil.setContentView(this,R.layout.activity_qrcode);
+        binding= DataBindingUtil.setContentView(this,R.layout.activity_qrcamera);
 
-        binding.imageButton.setOnClickListener(view->{
-            Intent intent = new Intent(QRCameraActivity.this, QRCodeActivity.class);
-            startActivity(intent);
-            finish();
-        });
+
 
 
     }
