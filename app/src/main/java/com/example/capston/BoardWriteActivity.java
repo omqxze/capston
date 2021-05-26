@@ -6,17 +6,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.example.capston.databinding.ActivityBoardWriteBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import Board.BoardAPI;
-import Board.BoardInfo;
-import Board.BoardJsonObject;
-import Login.LoginCheck;
+import Board.BoardWriteAPI;
+import Board.BoardWriteInfo;
+import Board.BoardWriteJsonObject;
 import Retrofit.conRetrofit;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -65,6 +63,8 @@ public class BoardWriteActivity extends AppCompatActivity {
                     startActivity(intent4);
                     break;
                 case R.id.reserv:
+                    Intent intent5 = new Intent(BoardWriteActivity.this, ReservActivity.class);
+                    startActivity(intent5);
                     break;
             }
             return false;
@@ -77,15 +77,15 @@ public class BoardWriteActivity extends AppCompatActivity {
             String boardNum = binding.passenger.getText().toString();
             String contents = binding.content.getText().toString();
 
-            BoardAPI client = conRetrofit.getApiClient().create(BoardAPI.class);
-            BoardJsonObject boardJsonObject = new BoardJsonObject(startArea, startDateTime, endArea, boardNum, contents);
-            Call<BoardInfo> call = client.getJsonString(boardJsonObject);
-            call.enqueue(new Callback<BoardInfo>() {
+            BoardWriteAPI client = conRetrofit.getApiClient().create(BoardWriteAPI.class);
+            BoardWriteJsonObject boardJsonObject = new BoardWriteJsonObject(startArea, startDateTime, endArea, boardNum, contents);
+            Call<BoardWriteInfo> call = client.getJsonString(boardJsonObject);
+            call.enqueue(new Callback<BoardWriteInfo>() {
                 @Override
-                public void onResponse(Call<BoardInfo> call, Response<BoardInfo> response) {
+                public void onResponse(Call<BoardWriteInfo> call, Response<BoardWriteInfo> response) {
                     String result = response.body().getResult();
 
-                    if (result.equals("101"))  {   //성공이라고 가정
+                    if (result.equals("501"))  {   //성공이라고 가정
                         Intent intent = new Intent(BoardWriteActivity.this, BoardWritePopupActivity.class);
                         intent.putExtra("data", "Test Popup");
                         startActivityForResult(intent, 1);
@@ -96,7 +96,7 @@ public class BoardWriteActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onFailure(Call<BoardInfo> call, Throwable t) {
+                public void onFailure(Call<BoardWriteInfo> call, Throwable t) {
 
                 }
             });

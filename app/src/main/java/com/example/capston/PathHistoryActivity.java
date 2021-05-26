@@ -30,7 +30,7 @@ public class PathHistoryActivity extends AppCompatActivity {
         binding= DataBindingUtil.setContentView(this,R.layout.activity_pasthistory);
 
 // Toolbar 활성화
-        setSupportActionBar(binding.toolbar3);
+        setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
@@ -54,7 +54,7 @@ public class PathHistoryActivity extends AppCompatActivity {
                     startActivity(intent4);
                     break;
                 case R.id.reserv:
-                    Intent intent5 = new Intent(PathHistoryActivity.this, BoardDetailActivity.class);
+                    Intent intent5 = new Intent(PathHistoryActivity.this, ReservActivity.class);
                     startActivity(intent5);
                     break;
             }

@@ -33,7 +33,6 @@ public class InfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding= DataBindingUtil.setContentView(this,R.layout.activity_info);
-        SharedPreferences pref = getSharedPreferences("mine", MODE_PRIVATE);
 
         // Toolbar 활성화
         setSupportActionBar(binding.toolbar);

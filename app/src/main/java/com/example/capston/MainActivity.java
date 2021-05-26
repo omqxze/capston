@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
                                         startActivity(intent);
                                         break;
                                 case R.id.write:
+                                        Intent intent2 = new Intent(MainActivity.this, QRCodeActivity.class);
+                                        startActivity(intent2);
                                         break;
                                 case R.id.home:
                                         Intent intent3 = new Intent(MainActivity.this, MainActivity.class);
@@ -50,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
                                         startActivity(intent4);
                                         break;
                                 case R.id.reserv:
+                                        Intent intent5 = new Intent(MainActivity.this, ReservActivity.class);
+                                        startActivity(intent5);
                                         break;
                         }
                         return false;

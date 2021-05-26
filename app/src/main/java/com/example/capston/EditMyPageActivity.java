@@ -49,6 +49,8 @@ public class EditMyPageActivity extends AppCompatActivity {
                     startActivity(intent4);
                     break;
                 case R.id.reserv:
+                    Intent intent5 = new Intent(EditMyPageActivity.this, ReservActivity.class);
+                    startActivity(intent5);
                     break;
             }
             return false;

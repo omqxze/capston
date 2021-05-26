@@ -65,9 +65,12 @@ public class LoginActivity extends AppCompatActivity {
                     switch (response.body().getResult()){
                         case "444":
                             Toast.makeText(LoginActivity.this,"로그인 되었습니다(탑승자)",Toast.LENGTH_SHORT).show();
+                            editor.putString("userId",id);
+                            editor.putString("userPass",pass);
+                            editor.apply();
+                            editor.commit();
                             if(binding.autologin.isChecked()){
                                 editor.putInt("permission",1);
-                                editor.putString("userId",id);
                                 editor.apply();
                                 editor.commit();
                             }
@@ -93,6 +96,10 @@ public class LoginActivity extends AppCompatActivity {
                             break;
                         case "555":
                             Toast.makeText(LoginActivity.this,"로그인 되었습니다",Toast.LENGTH_SHORT).show();
+                            editor.putString("userId",id);
+                            editor.putString("userPass",pass);
+                            editor.apply();
+                            editor.commit();
                             if(binding.autologin.isChecked()){
                                 editor.putInt("permission",1);
                                 editor.apply();

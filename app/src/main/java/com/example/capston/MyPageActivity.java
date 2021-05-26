@@ -2,15 +2,23 @@ package com.example.capston;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.example.capston.databinding.ActivityLoginBinding;
 import com.example.capston.databinding.ActivityMypageBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import MyPage.MyPageAPI;
+import MyPage.MyPageInfo;
+import MyPage.MyPageJsonObject;
+import Retrofit.conRetrofit;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MyPageActivity extends AppCompatActivity {
     ActivityMypageBinding binding;
@@ -29,6 +37,10 @@ public class MyPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding= DataBindingUtil.setContentView(this,R.layout.activity_mypage);
+
+        SharedPreferences pref = getSharedPreferences("mine", MODE_PRIVATE);
+        String userId = pref.getString("userId", "0");
+        String userPass = pref.getString("userPass", "0");
 
         // Toolbar 활성화
         setSupportActionBar(binding.toolbar4);
@@ -55,11 +67,29 @@ public class MyPageActivity extends AppCompatActivity {
                     startActivity(intent4);
                     break;
                 case R.id.reserv:
-                    Intent intent5 = new Intent(MyPageActivity.this, BoardDetailActivity.class);
+                    Intent intent5 = new Intent(MyPageActivity.this, ReservActivity.class);
                     startActivity(intent5);
                     break;
             }
             return false;
+        });
+
+        MyPageAPI client = conRetrofit.getApiClient().create(MyPageAPI.class);
+        MyPageJsonObject mypageJsonObject = new MyPageJsonObject(userId);
+        Call<MyPageInfo> call = client.getJsonString(mypageJsonObject);
+        call.enqueue(new Callback<MyPageInfo>() {
+            @Override
+            public void onResponse(Call<MyPageInfo> call, Response<MyPageInfo> response) {
+                String userStunum = response.body().getUserStunum();
+                binding.userId3.setText(userId);
+                binding.userPass3.setText(userPass);
+                binding.userStunum.setText(userStunum);
+            }
+
+            @Override
+            public void onFailure(Call<MyPageInfo> call, Throwable t) {
+
+            }
         });
 
         binding.btnEditfinish.setOnClickListener(view->{
