@@ -65,9 +65,7 @@ public class JoinJsonObject {
         setUserId(user.userId.getText().toString());
         setUserPass(new BASE64().encode(user.userPass.getText().toString()));
         setUserName(user.userName.getText().toString());
-        if(user.carNum==null)
-            setUserStat("1");
-        else setUserStat("2");
+        setUserStat("1");
         setUserEmail(user.userEmail.getText().toString());
         setUserBirth(user.birthYear.getSelectedItem().toString()+"-"+user.birthMonth.getSelectedItem().toString()+"-"+user.birthDay.getSelectedItem().toString());
         setUserMajor(user.userMajor.getText().toString());

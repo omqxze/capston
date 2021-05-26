@@ -84,6 +84,7 @@ public class BoardWriteActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<BoardInfo> call, Response<BoardInfo> response) {
                     String result = response.body().getResult();
+
                     if (result.equals("101"))  {   //성공이라고 가정
                         Intent intent = new Intent(BoardWriteActivity.this, BoardWritePopupActivity.class);
                         intent.putExtra("data", "Test Popup");

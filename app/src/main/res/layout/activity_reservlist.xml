@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        //상단고정
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="66dp">
+
+            <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:background="#3A5077"
+                android:text="예약 내역 목록"
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            </androidx.appcompat.widget.Toolbar>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="66dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="예약 내역 목록"
+                    android:textSize="25dp"
+                    android:textColor="#000000"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="560dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:layout_width="330dp"
+                                android:layout_height="180dp"
+                                android:layout_marginLeft="40dp"
+                                android:layout_marginTop="15dp"
+                                android:background="@drawable/textview_round"
+                                android:backgroundTint="#9DD1E8"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/start_location"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="1"
+                                    android:text="출발지 : "
+                                    android:textColor="#000000"
+                                    android:textSize="18dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+
+                                    android:id="@+id/arrive_location"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="1"
+                                    android:text="도착지 : "
+                                    android:textColor="#000000"
+                                    android:textSize="18dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+
+                                    android:id="@+id/start_time"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="1"
+                                    android:text="시간 : "
+                                    android:textColor="#000000"
+                                    android:textSize="18dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+
+                                    android:id="@+id/passenger_num"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="1"
+                                    android:text="인원 : "
+                                    android:textColor="#000000"
+                                    android:textSize="18dp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <CheckBox
+                                android:id="@+id/delcheck1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="35dp"
+                                android:text="선택" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="330dp"
+                                android:layout_height="180dp"
+                                android:layout_marginLeft="40dp"
+                                android:layout_marginTop="15dp"
+                                android:background="@drawable/textview_round"
+                                android:backgroundTint="#9DD1E8" >
+
+                                <TextView
+                                    android:id="@+id/start_location2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="1"
+                                    android:text="출발지 : "
+                                    android:textColor="#000000"
+                                    android:textSize="18dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+
+                                    android:id="@+id/arrive_location2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="1"
+                                    android:text="도착지 : "
+                                    android:textColor="#000000"
+                                    android:textSize="18dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+
+                                    android:id="@+id/start_time2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="1"
+                                    android:text="시간 : "
+                                    android:textColor="#000000"
+                                    android:textSize="18dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+
+                                    android:id="@+id/passenger_num2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="1"
+                                    android:text="인원 : "
+                                    android:textColor="#000000"
+                                    android:textSize="18dp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <CheckBox
+                                android:id="@+id/delcheck2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="35dp"
+                                android:text="선택" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_height="80dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/reserv_delete_Btn"
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="320dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#063E9F"
+                    android:text="삭제"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+            </LinearLayout>
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:itemIconTint="#000"
+                app:itemTextColor="#000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                app:menu="@menu/bottom_menu" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

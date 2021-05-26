@@ -65,15 +65,26 @@
             <LinearLayout
                 android:layout_width="360dp"
                 android:layout_height="140dp"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/reserv1"
                     android:layout_width="360dp"
-                    android:layout_height="110dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/textview_round"
                     android:text="//예약현황 출력"
                     android:textColor="#000000"
-                    android:textSize="10dp"
-                    android:background="@drawable/textview_round" />
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/reserv2"
+                    android:layout_width="360dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/textview_round"
+                    android:text="//예약현황 출력"
+                    android:textColor="#000000"
+                    android:textSize="10dp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -107,15 +118,48 @@
             <LinearLayout
                 android:layout_width="360dp"
                 android:layout_height="140dp"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/postname1"
                     android:layout_width="360dp"
-                    android:layout_height="110dp"
-                    android:text="//최근 게시물 출력"
+                    android:layout_height="24dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/textview_round"
+                    android:text="게시물 제목 1"
                     android:textColor="#000000"
-                    android:textSize="10dp"
-                    android:background="@drawable/textview_round" />
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/postname3"
+                    android:layout_width="360dp"
+                    android:layout_height="24dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/textview_round"
+                    android:text="게시물 제목 2"
+                    android:textColor="#000000"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/postname3"
+                    android:layout_width="360dp"
+                    android:layout_height="24dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/textview_round"
+                    android:text="게시물 제목 3"
+                    android:textColor="#000000"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/postname4"
+                    android:layout_width="360dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/textview_round"
+                    android:text="게시물 제목 4"
+                    android:textColor="#000000"
+                    android:textSize="12dp" />
+
+
 
             </LinearLayout>
         </LinearLayout>

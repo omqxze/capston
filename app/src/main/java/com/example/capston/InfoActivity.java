@@ -2,6 +2,7 @@ package com.example.capston;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -11,6 +12,8 @@ import androidx.databinding.DataBindingUtil;
 
 import com.example.capston.databinding.ActivityInfoBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import Util.SaveSharedPreference;
 
 
 public class InfoActivity extends AppCompatActivity {
@@ -30,6 +33,7 @@ public class InfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding= DataBindingUtil.setContentView(this,R.layout.activity_info);
+        SharedPreferences pref = getSharedPreferences("mine", MODE_PRIVATE);
 
         // Toolbar 활성화
         setSupportActionBar(binding.toolbar);

@@ -67,6 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this,"로그인 되었습니다(탑승자)",Toast.LENGTH_SHORT).show();
                             if(binding.autologin.isChecked()){
                                 editor.putInt("permission",1);
+                                editor.putString("userId",id);
                                 editor.apply();
                                 editor.commit();
                             }
