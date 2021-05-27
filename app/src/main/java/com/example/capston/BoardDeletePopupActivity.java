@@ -29,7 +29,7 @@ public class BoardDeletePopupActivity extends Activity {
 
         Intent intent = getIntent();
         String userId = intent.getStringExtra("userId");
-        binding.txtText.setText(userId+"님 예약이 완료되었습니다.");
+        binding.txtText.setText(userId+"님 삭제 완료되었습니다.");
 
         binding.okBtn.setOnClickListener(view->{
             String confCode = intent.getStringExtra("confCode");

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -72,7 +73,7 @@ public class BoardWriteActivity extends AppCompatActivity {
 
         binding.write.setOnClickListener(view->{
             String startArea = binding.startLocation.getText().toString();
-            String startDateTime = binding.startTime.getText().toString();
+            String startDateTime = value(binding.reservYear)+":"+value(binding.reservMonth)+":"+value(binding.reservDay)+" "+value(binding.reservHour)+":"+value(binding.reservMinute)+":00";
             String endArea = binding.arriveLocation.getText().toString();
             String boardNum = binding.passenger.getText().toString();
             String contents = binding.content.getText().toString();
@@ -101,6 +102,9 @@ public class BoardWriteActivity extends AppCompatActivity {
                 }
             });
         });
+    }
+    public String value(Spinner sp){
+        return sp.getSelectedItem().toString();
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

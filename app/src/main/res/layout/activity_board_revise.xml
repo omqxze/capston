@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="67dp"
                 android:background="#3A5077"
-                android:text="게시물 수정"
+                android:text="메인화면"
                 android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
@@ -75,25 +75,66 @@
             <LinearLayout
                 android:layout_height="40dp"
                 android:layout_width="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginLeft="110dp">
 
                 <TextView
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="120dp"
                     android:text="시간"
                     android:textColor="#000000"
                     android:textSize="17dp"
                     android:typeface="sans" />
 
-                <EditText
-                    android:hint="//출발 시간 출력"
-                    android:id="@+id/start_time"
-                    android:layout_width="154dp"
-                    android:layout_height="wrap_content"
-                    android:textSize="14dp"
-                    android:ems="10"
-                    android:inputType="textEmailAddress" />
+                <Spinner
+                    android:id="@+id/reservYear"
+                    android:layout_width="110dp"
+                    android:layout_height="42dp"
+                    android:entries="@array/year"
+                    android:spinnerMode="dropdown" />
+
+                <Spinner
+                    android:id="@+id/reservMonth"
+                    android:layout_width="90dp"
+                    android:layout_height="42dp"
+                    android:entries="@array/month"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_height="40dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginLeft="170dp">
+
+                <Spinner
+                    android:id="@+id/reservDay"
+                    android:layout_width="110dp"
+                    android:layout_height="42dp"
+                    android:entries="@array/day"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="40dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginLeft="170dp">
+
+                <Spinner
+                    android:id="@+id/reservHour"
+                    android:layout_width="110dp"
+                    android:layout_height="42dp"
+                    android:entries="@array/hour"
+                    android:spinnerMode="dropdown" />
+
+                <Spinner
+                    android:id="@+id/reservMinute"
+                    android:layout_width="90dp"
+                    android:layout_height="42dp"
+                    android:entries="@array/minute"
+                    android:spinnerMode="dropdown" />
             </LinearLayout>
 
             <LinearLayout
@@ -186,7 +227,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_height="300dp"
+                android:layout_height="250dp"
                 android:layout_width="350dp"
                 android:layout_marginLeft="30dp"
                 android:orientation="horizontal">
@@ -202,7 +243,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_height="80dp"
+                android:layout_height="55dp"
                 android:layout_width="match_parent"
                 android:orientation="horizontal">
 
@@ -210,7 +251,7 @@
                     android:layout_width="60dp"
                     android:layout_height="50dp"
                     android:layout_marginLeft="320dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:backgroundTint="#063E9F"
                     android:text="수정"
                     android:textStyle="bold"
