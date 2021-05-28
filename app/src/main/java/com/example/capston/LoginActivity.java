@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding=DataBindingUtil.setContentView(this,R.layout.activity_login);
+       binding=DataBindingUtil.setContentView(this,R.layout.activity_login);
 
         SharedPreferences pref = getSharedPreferences("mine", MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();

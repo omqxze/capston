@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
                 super.onCreate(savedInstanceState);
                 binding=DataBindingUtil.setContentView(this,R.layout.activity_main);
                 binding.reservText.setOnClickListener(view->{
-                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                        Intent intent = new Intent(MainActivity.this, ReservActivity.class);
                         startActivity(intent);
                 });
                 binding.lateText.setOnClickListener(view->{
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                 });
                 binding.chattingText.setOnClickListener(view->{
-                        Intent intent = new Intent(MainActivity.this, ChatBoardActivity.class);
+                        Intent intent = new Intent(MainActivity.this, QRCodeActivity.class);
                         startActivity(intent);
                 });
 

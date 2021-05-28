@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="board"
+            type="Board.Board"/>
     </data>
 
     <LinearLayout
@@ -63,6 +65,7 @@
 
                 <EditText
                     android:hint="//출발 장소 출력"
+                    android:text="@{board.startArea}"
                     android:id="@+id/start_location"
                     android:layout_width="154dp"
                     android:textSize="14dp"
@@ -90,7 +93,7 @@
                     android:id="@+id/reservYear"
                     android:layout_width="110dp"
                     android:layout_height="42dp"
-                    android:entries="@array/year"
+                    android:entries="@array/year2"
                     android:spinnerMode="dropdown" />
 
                 <Spinner
@@ -153,6 +156,7 @@
 
                 <EditText
                     android:hint="//도착장소 출력"
+                    android:text="@{board.endArea}"
                     android:id="@+id/arrive_location"
                     android:layout_width="154dp"
                     android:layout_height="wrap_content"
@@ -177,6 +181,7 @@
 
                 <EditText
                     android:hint="//인원수"
+                    android:text="@{board.rsv}"
                     android:id="@+id/passenger"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
@@ -234,6 +239,7 @@
 
                 <EditText
                     android:id="@+id/content"
+                    android:text="@{board.contents}"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
@@ -248,6 +254,7 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/write"
                     android:layout_width="60dp"
                     android:layout_height="50dp"
                     android:layout_marginLeft="320dp"

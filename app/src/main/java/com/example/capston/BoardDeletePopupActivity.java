@@ -2,6 +2,7 @@ package com.example.capston;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -28,8 +29,9 @@ public class BoardDeletePopupActivity extends Activity {
         binding= DataBindingUtil.setContentView(this,R.layout.activity_board_delete_popup);
 
         Intent intent = getIntent();
-        String userId = intent.getStringExtra("userId");
-        binding.txtText.setText(userId+"님 삭제 완료되었습니다.");
+        SharedPreferences pref = getSharedPreferences("mine", MODE_PRIVATE);
+        String userId = pref.getString("userId", "");
+        binding.txtText.setText(userId+"님 삭제가 완료되었습니다.");
 
         binding.okBtn.setOnClickListener(view->{
             String confCode = intent.getStringExtra("confCode");

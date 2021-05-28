@@ -2,6 +2,7 @@ package com.example.capston;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -40,6 +41,9 @@ public class BoardWriteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding= DataBindingUtil.setContentView(this,R.layout.activity_board_write);
 
+        SharedPreferences pref = getSharedPreferences("mine", MODE_PRIVATE);
+        String userId = pref.getString("userId", "");
+
         // Toolbar 활성화
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -70,7 +74,8 @@ public class BoardWriteActivity extends AppCompatActivity {
             }
             return false;
         });
-
+        binding.reservYear.setSelection(1);
+        binding.reservMonth.setSelection(5);
         binding.write.setOnClickListener(view->{
             String startArea = binding.startLocation.getText().toString();
             String startDateTime = value(binding.reservYear)+":"+value(binding.reservMonth)+":"+value(binding.reservDay)+" "+value(binding.reservHour)+":"+value(binding.reservMinute)+":00";
@@ -79,7 +84,7 @@ public class BoardWriteActivity extends AppCompatActivity {
             String contents = binding.content.getText().toString();
 
             BoardWriteAPI client = conRetrofit.getApiClient().create(BoardWriteAPI.class);
-            BoardWriteJsonObject boardJsonObject = new BoardWriteJsonObject(startArea, startDateTime, endArea, boardNum, contents);
+            BoardWriteJsonObject boardJsonObject = new BoardWriteJsonObject(userId,startArea, startDateTime, endArea, boardNum, contents);
             Call<BoardWriteInfo> call = client.getJsonString(boardJsonObject);
             call.enqueue(new Callback<BoardWriteInfo>() {
                 @Override

@@ -37,6 +37,8 @@ public class BoardActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home: { //toolbar의 back키 눌렀을 때 동작
+                Intent intent = new Intent(BoardActivity.this, MainActivity.class);
+                startActivity(intent);
                 finish();
                 return true;
             }
@@ -79,7 +81,6 @@ public class BoardActivity extends AppCompatActivity {
             return false;
         });
 
-        String key = "key";
         BoardAPI client = conRetrofit.getApiClient().create(BoardAPI.class);
         Call<ResponseBody> call = client.getJsonString();
         call.enqueue(new Callback<ResponseBody>() {
@@ -91,19 +92,8 @@ public class BoardActivity extends AppCompatActivity {
                         JSONArray jsonArray = new JSONArray(result);
                         for(int i = jsonArray.length()-1; i>=0 ; i--){
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            String confCode = jsonObject.getString("confCode");
-                            String userId = jsonObject.getString("userId");
-                            String boardNum = jsonObject.getString("boardNum");
-                            String rsvCount = jsonObject.getString("rsvCount");
-                            //String startDateTime = jsonObject.getString("startDatetime");
-                            String startArea = jsonObject.getString("startArea");
-                            String endArea = jsonObject.getString("endArea");
-                            String contents = jsonObject.getString("contents");
-                            String rsvStat = jsonObject.getString("rsvStat");
-                            Log.v("Test", jsonObject.toString());
                             ar.add(jsonObject);
                         }
-
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -124,13 +114,7 @@ public class BoardActivity extends AppCompatActivity {
         binding.listview.setOnItemClickListener((parent, view, position, id) -> {
             Intent intent = new Intent(this, BoardDetailActivity.class);
             JSONObject jo=boAd.getItem(position);
-            try {
-                Log.e("test",jo.getString("startArea"));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
             intent.putExtra("data", jo.toString());
-            Log.e("test",jo.toString());
             startActivityForResult(intent, 1103);
         });
 

@@ -6,6 +6,9 @@ import lombok.Setter;
 public class BoardWriteJsonObject {
     @Getter
     @Setter
+    private String userId;
+    @Getter
+    @Setter
     private String startArea;
     @Getter
     @Setter
@@ -21,9 +24,10 @@ public class BoardWriteJsonObject {
     private String contents;
 
     @Override
-    public String toString() {return "CalssPojo [startArea="+startArea+", startDateTime = "+startDateTime+", endArea = "+endArea+", boardNum = "+boardNum+",contents = "+contents+"]";}
+    public String toString() {return "CalssPojo [userid="+userId+", startArea="+startArea+", startDateTime = "+startDateTime+", endArea = "+endArea+", boardNum = "+boardNum+",contents = "+contents+"]";}
 
-    public BoardWriteJsonObject(String startArea, String startDateTime, String endArea, String boardNum, String contents){
+    public BoardWriteJsonObject(String userId,String startArea, String startDateTime, String endArea, String boardNum, String contents){
+        this.userId=userId;
         this.startArea = startArea;
         this.startDateTime = startDateTime;
         this.endArea = endArea;

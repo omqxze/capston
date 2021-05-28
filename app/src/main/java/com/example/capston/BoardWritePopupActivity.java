@@ -2,6 +2,7 @@ package com.example.capston;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.Window;
@@ -20,8 +21,9 @@ public class BoardWritePopupActivity extends Activity {
         binding= DataBindingUtil.setContentView(this,R.layout.activity_board_write_popup);
 
         Intent intent = getIntent();
-        String data = intent.getStringExtra("data");
-        binding.txtText.setText(data+"님 등록이 완료되었습니다.");
+        SharedPreferences pref = getSharedPreferences("mine", MODE_PRIVATE);
+        String userId = pref.getString("userId", "");
+        binding.txtText.setText(userId+"님 등록이 완료되었습니다.");
 
         binding.okBtn.setOnClickListener(view->{
             Intent intentt = new Intent(BoardWritePopupActivity.this,BoardActivity.class);

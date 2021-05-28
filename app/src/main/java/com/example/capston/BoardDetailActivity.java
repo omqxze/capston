@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +24,7 @@ import lombok.SneakyThrows;
 
 public class BoardDetailActivity extends AppCompatActivity {
     ActivityBoardDetailBinding binding;
-
+    String userId2;
     @SneakyThrows
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -70,28 +71,54 @@ public class BoardDetailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         JSONObject jo=new JSONObject(intent.getStringExtra("data"));
-        Log.e("뭘봐",jo.getString("startArea"));
         Board b=new Board(jo);
         binding.setBoard(b);
 
+        try {
+             userId2 = jo.getString("userId");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
         binding.reservBtn.setOnClickListener(view->{
-            Intent intent2 = new Intent(this, BoardReservPopupActivity.class);
-            intent2.putExtra("data", "Test Popup");
-            startActivityForResult(intent2, 1);
+            if(userId.equals(userId2)){
+                Intent intent2 = new Intent(this, BoardReservPopupActivity.class);
+                try {
+                    intent2.putExtra("confCode", jo.getString("confCode"));
+                    intent2.putExtra("startArea", jo.getString("startArea"));
+                    intent2.putExtra("startDateTime", jo.getString("startDateTime"));
+                    intent2.putExtra("endArea", jo.getString("endArea"));
+                    intent2.putExtra("boardNum", jo.getString("boardNum"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                startActivityForResult(intent2, 1);
+            }
+            else
+                Toast.makeText(BoardDetailActivity.this,"권한이 없습니다.",Toast.LENGTH_SHORT).show();
         });
         binding.rewriteBtn.setOnClickListener(view->{
-            Intent intent3 = new Intent(BoardDetailActivity.this, BoardReviseActivity.class);
-            startActivity(intent3);
+            if(userId.equals(userId2)){
+                Intent intent3 = new Intent(BoardDetailActivity.this, BoardReviseActivity.class);
+                intent3.putExtra("data",jo.toString());
+                startActivityForResult(intent3,1);
+            }
+            else
+                Toast.makeText(BoardDetailActivity.this,"권한이 없습니다.",Toast.LENGTH_SHORT).show();
         });
         binding.delBtn.setOnClickListener(view->{
-            Intent intent4 = new Intent(this, BoardDeletePopupActivity.class);
-            try {
-                intent4.putExtra("confCode", jo.getString("confCode"));
-                intent4.putExtra("userId",userId);
-            } catch (JSONException e) {
-                e.printStackTrace();
+            if(userId.equals(userId2)){
+                Intent intent4 = new Intent(this, BoardDeletePopupActivity.class);
+                try {
+                    intent4.putExtra("confCode", jo.getString("confCode"));
+                    intent4.putExtra("userId",userId);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                startActivityForResult(intent4, 1);
             }
-            startActivityForResult(intent4, 1);
+            else
+                Toast.makeText(BoardDetailActivity.this,"본인만 가능합니다.",Toast.LENGTH_SHORT).show();
         });
     }
     @SneakyThrows
@@ -112,7 +139,7 @@ public class BoardDetailActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home: { //toolbar의 back키 눌렀을 때 동작
-                finish();
+
                 return true;
             }
         }

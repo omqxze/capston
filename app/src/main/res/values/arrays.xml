@@ -75,7 +75,6 @@
         <item>2020</item>
         <item>2021</item>
     </string-array>
-
     <string-array name="month">
         <item>-월-</item>
         <item>01</item>
@@ -91,7 +90,6 @@
         <item>11</item>
         <item>12</item>
     </string-array>
-
     <string-array name="day">
         <item>-일-</item>
         <item>1</item>
@@ -153,7 +151,6 @@
         <item>22</item>
         <item>23</item>
     </string-array>
-
     <string-array name="minute">
         <item>-분-</item>
         <item>00</item>
@@ -216,5 +213,9 @@
         <item>57</item>
         <item>58</item>
         <item>59</item>
+    </string-array>
+    <string-array name="year2">
+        <item>-년도-</item>
+        <item>2021</item>
     </string-array>
 </resources>

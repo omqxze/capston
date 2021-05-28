@@ -2,7 +2,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-
     </data>
 
     <LinearLayout
@@ -48,15 +47,16 @@
                     android:layout_marginBottom="3dp"
                     android:layout_width="70dp"
                     android:layout_height="wrap_content" />
+
                 <TextView
                     android:id="@+id/start_location_data"
-                    android:text=""
-                    android:textSize="15sp"
-                    android:textColor="#000"
-                    android:alpha="0.87"
-                    android:layout_marginBottom="3dp"
                     android:layout_width="130dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:alpha="0.87"
+                    android:text=""
+                    android:textColor="#000"
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -139,7 +139,7 @@
 
 
             <TextView
-                android:text="위의 내용으로 예약하시겠습니까?"
+                android:text="위의 내용으로 수정하시겠습니까?"
                 android:textSize="15sp"
                 android:textColor="#000"
                 android:textStyle="bold"
@@ -163,6 +163,7 @@
             android:layout_height="37dp"
             android:orientation="horizontal">
             <Button
+                android:id="@+id/okBtn"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:background="#00000000"
@@ -173,6 +174,7 @@
                 android:textSize="15sp" />
 
             <Button
+                android:id="@+id/noBtn"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:background="#00000000"
