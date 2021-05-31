@@ -25,6 +25,9 @@ public  class Board {
     @Getter
     @Setter
     private String confCode;
+    @Getter
+    @Setter
+    private String area;
 
     public Board(JSONObject jo) throws JSONException {
         this.startArea = jo.getString("startArea");
@@ -33,5 +36,6 @@ public  class Board {
         this.endArea = jo.getString("endArea");
         this.contents = jo.getString("contents");
         this.confCode=jo.getString("confCode");
+        this.area=jo.getString("startArea")+jo.getString("endArea")+"까지";
     }
 }

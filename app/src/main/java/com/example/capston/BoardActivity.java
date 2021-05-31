@@ -111,6 +111,7 @@ public class BoardActivity extends AppCompatActivity {
 
         BoardAdapter boAd=new BoardAdapter(getApplicationContext(),ar);
         binding.listview.setAdapter(boAd);
+
         binding.listview.setOnItemClickListener((parent, view, position, id) -> {
             Intent intent = new Intent(this, BoardDetailActivity.class);
             JSONObject jo=boAd.getItem(position);

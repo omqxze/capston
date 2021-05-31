@@ -74,6 +74,12 @@ public class BoardReservPopupActivity extends Activity {
                 }
             });
         });
+        binding.noBtn.setOnClickListener(view->{
+            Intent intentt = new Intent();
+            intentt.putExtra("result", "Close Popup");
+            setResult(RESULT_OK, intentt);
+            finish();
+        });
     }
     @Override
     public boolean onTouchEvent(MotionEvent event) {

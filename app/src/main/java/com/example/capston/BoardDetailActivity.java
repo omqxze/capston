@@ -81,7 +81,7 @@ public class BoardDetailActivity extends AppCompatActivity {
         }
 
         binding.reservBtn.setOnClickListener(view->{
-            if(userId.equals(userId2)){
+            if(!userId.equals(userId2)){
                 Intent intent2 = new Intent(this, BoardReservPopupActivity.class);
                 try {
                     intent2.putExtra("confCode", jo.getString("confCode"));
@@ -139,7 +139,7 @@ public class BoardDetailActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home: { //toolbar의 back키 눌렀을 때 동작
-
+                finish();
                 return true;
             }
         }

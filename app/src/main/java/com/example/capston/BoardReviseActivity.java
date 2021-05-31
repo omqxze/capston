@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -98,6 +99,25 @@ public class BoardReviseActivity extends AppCompatActivity {
             intent1.putExtra("boardNum", boardNum);
             intent1.putExtra("contents",contents);
             startActivityForResult(intent1, 1);
+        });
+        binding.plus.setOnClickListener(view->{
+            int i=Integer.valueOf(binding.passenger.getText().toString());
+            if(i+1<=4){
+                binding.passenger.setText(String.valueOf(i+1));
+            }
+            else{
+                Toast.makeText(BoardReviseActivity.this,"최대 4명을 넘을 수 없습니다.",Toast.LENGTH_SHORT).show();
+            }
+
+        });
+        binding.minus.setOnClickListener(view->{
+            int i=Integer.valueOf(binding.passenger.getText().toString());
+            if(i-1<=0){
+                Toast.makeText(BoardReviseActivity.this,"최소 1명 이상이어야합니다.",Toast.LENGTH_SHORT).show();
+            }
+            else{
+                binding.passenger.setText(String.valueOf(i-1));
+            }
         });
     }
     public String value(Spinner sp){

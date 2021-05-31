@@ -172,6 +172,7 @@
                     android:typeface="sans" />
 
                 <EditText
+                    android:text="1"
                     android:id="@+id/passenger"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"

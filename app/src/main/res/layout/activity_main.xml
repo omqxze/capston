@@ -114,54 +114,13 @@
                     android:textColor="#000000"
                     android:textSize="20dp" />
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="360dp"
-                android:layout_height="140dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/postname1"
+            <ListView
+                    android:id="@+id/listview"
                     android:layout_width="360dp"
-                    android:layout_height="24dp"
-                    android:layout_marginBottom="5dp"
-                    android:background="@drawable/textview_round"
-                    android:text="게시물 제목 1"
-                    android:textColor="#000000"
-                    android:textSize="12dp" />
+                    android:layout_height="140dp"
 
-                <TextView
-                    android:id="@+id/postname2"
-                    android:layout_width="360dp"
-                    android:layout_height="24dp"
-                    android:layout_marginBottom="5dp"
-                    android:background="@drawable/textview_round"
-                    android:text="게시물 제목 2"
-                    android:textColor="#000000"
-                    android:textSize="12dp" />
+                />
 
-                <TextView
-                    android:id="@+id/postname3"
-                    android:layout_width="360dp"
-                    android:layout_height="24dp"
-                    android:layout_marginBottom="5dp"
-                    android:background="@drawable/textview_round"
-                    android:text="게시물 제목 3"
-                    android:textColor="#000000"
-                    android:textSize="12dp" />
-
-                <TextView
-                    android:id="@+id/postname4"
-                    android:layout_width="360dp"
-                    android:layout_height="24dp"
-                    android:background="@drawable/textview_round"
-                    android:text="게시물 제목 4"
-                    android:textColor="#000000"
-                    android:textSize="12dp" />
-
-
-
-            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
