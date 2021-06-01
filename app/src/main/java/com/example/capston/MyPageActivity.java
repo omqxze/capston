@@ -43,10 +43,13 @@ public class MyPageActivity extends AppCompatActivity {
         String userPass = pref.getString("userPass", "0");
 
         // Toolbar 활성화
-        setSupportActionBar(binding.toolbar4);
+        setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-
+        binding.mypage.setOnClickListener(view->{
+            Intent intent = new Intent(MyPageActivity.this, InfoActivity.class);
+            startActivity(intent);
+        });
         BottomNavigationView bottomNavigationView = binding.bottomNavi;
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {

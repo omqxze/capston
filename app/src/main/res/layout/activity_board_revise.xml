@@ -19,16 +19,23 @@
             android:layout_width="match_parent"
             android:layout_height="66dp">
 
-            <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
+            <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="67dp"
                 android:background="#3A5077"
-                android:text="메인화면"
+                android:text="게시판"
                 android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-
+                <ImageButton
+                    android:id="@+id/mypage"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="355dp"
+                    android:layout_marginTop="7dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:src="@mipmap/info"
+                    android:tint="#FFFFFF" />
             </androidx.appcompat.widget.Toolbar>
         </FrameLayout>
 

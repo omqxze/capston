@@ -26,7 +26,7 @@ public class EditMyPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding= DataBindingUtil.setContentView(this,R.layout.activity_editmypage);
         // Toolbar 활성화
-        setSupportActionBar(binding.toolbar2);
+        setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         BottomNavigationView bottomNavigationView = binding.bottomNavi;
@@ -54,6 +54,10 @@ public class EditMyPageActivity extends AppCompatActivity {
                     break;
             }
             return false;
+        });
+        binding.mypage.setOnClickListener(view->{
+            Intent intent = new Intent(this, InfoActivity.class);
+            startActivity(intent);
         });
 
         binding.btnEditfinish.setOnClickListener(view->{

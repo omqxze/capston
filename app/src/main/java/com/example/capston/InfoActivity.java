@@ -38,7 +38,10 @@ public class InfoActivity extends AppCompatActivity {
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-
+        binding.mypage.setOnClickListener(view->{
+            Intent intent = new Intent(InfoActivity.this, InfoActivity.class);
+            startActivity(intent);
+        });
         BottomNavigationView bottomNavigationView = binding.bottomNavi;
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {

@@ -35,6 +35,10 @@ public class BoardDetailActivity extends AppCompatActivity {
         SharedPreferences pref = getSharedPreferences("mine", MODE_PRIVATE);
         String userId = pref.getString("userId", "");
 
+        binding.mypage.setOnClickListener(view->{
+            Intent intent = new Intent(this, InfoActivity.class);
+            startActivity(intent);
+        });
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);

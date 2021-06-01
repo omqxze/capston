@@ -8,20 +8,23 @@
         android:layout_height="match_parent">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar7"
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="67dp"
             android:background="#3A5077"
-            android:text="메인화면"
+            android:text="게시판"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            tools:ignore="MissingConstraints">
+            <ImageButton
+                android:id="@+id/mypage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="355dp"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="#00FFFFFF"
+                android:src="@mipmap/info"
+                android:tint="#FFFFFF" />
         </androidx.appcompat.widget.Toolbar>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView

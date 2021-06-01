@@ -45,6 +45,11 @@ public class BoardReviseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding=DataBindingUtil.setContentView(this,R.layout.activity_board_revise);
 
+        binding.mypage.setOnClickListener(view->{
+            Intent intent = new Intent(this, InfoActivity.class);
+            startActivity(intent);
+        });
+
         Intent intent = getIntent();
         JSONObject jo=new JSONObject(intent.getStringExtra("data"));
         Board b=new Board(jo);

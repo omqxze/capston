@@ -34,10 +34,13 @@ public class QRCodeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding= DataBindingUtil.setContentView(this,R.layout.activity_qrcode);
         // Toolbar 활성화
-        setSupportActionBar(binding.toolbar7);
+        setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-
+        binding.mypage.setOnClickListener(view->{
+            Intent intent = new Intent(this, InfoActivity.class);
+            startActivity(intent);
+        });
         SharedPreferences pref = getSharedPreferences("mine", MODE_PRIVATE);
         String userId = pref.getString("userId", "");
 

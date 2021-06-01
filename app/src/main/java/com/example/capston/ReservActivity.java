@@ -73,6 +73,11 @@ public class ReservActivity extends AppCompatActivity {
                 return false;
             }
         });
+        binding.mypage.setOnClickListener(view->{
+            Intent intent = new Intent(ReservActivity.this, InfoActivity.class);
+            startActivity(intent);
+        });
+
 
         SharedPreferences pref = getSharedPreferences("mine", MODE_PRIVATE);
         String userId = pref.getString("userId", "");
@@ -139,6 +144,7 @@ public class ReservActivity extends AppCompatActivity {
                 Log.e("실패 : ", t.getLocalizedMessage());
             }
         });
+
         binding.reservDeleteBtn.setOnClickListener(view -> {
             ReserveDeleteAPI client2 = conRetrofit.getApiClient().create(ReserveDeleteAPI.class);
             if(binding.delcheck1.isChecked()){

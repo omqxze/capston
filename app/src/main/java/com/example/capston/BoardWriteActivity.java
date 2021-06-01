@@ -42,6 +42,11 @@ public class BoardWriteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding= DataBindingUtil.setContentView(this,R.layout.activity_board_write);
 
+        binding.mypage.setOnClickListener(view->{
+            Intent intent = new Intent(this, InfoActivity.class);
+            startActivity(intent);
+        });
+
         SharedPreferences pref = getSharedPreferences("mine", MODE_PRIVATE);
         String userId = pref.getString("userId", "");
 
