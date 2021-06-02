@@ -17,24 +17,26 @@
             android:layout_width="match_parent"
             android:layout_height="66dp">
 
-            <androidx.appcompat.widget.Toolbar
+            <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="67dp"
                 android:background="#3A5077"
-                android:text="게시판"
+                android:text="메인화면"
                 android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-                <ImageButton
-                    android:id="@+id/mypage"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="355dp"
-                    android:layout_marginTop="7dp"
-                    android:backgroundTint="#00FFFFFF"
-                    android:src="@mipmap/info"
-                    android:tint="#FFFFFF" />
             </androidx.appcompat.widget.Toolbar>
+
+            <ImageButton
+                android:id="@+id/mypage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="355dp"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="#00FFFFFF"
+                android:src="@mipmap/info"
+                android:tint="#FFFFFF" />
         </FrameLayout>
 
         <LinearLayout
@@ -54,26 +56,33 @@
                 android:typeface="sans" />
 
             <LinearLayout
-                android:layout_height="40dp"
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
+                android:layout_height="40dp"
                 android:layout_marginTop="20dp">
 
                 <TextView
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="60dp"
                     android:text="출발 장소"
                     android:textColor="#000000"
                     android:textSize="17dp"
                     android:typeface="sans" />
 
                 <EditText
+                    android:freezesText="true"
                     android:id="@+id/start_location"
-                    android:layout_width="154dp"
+                    android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textEmailAddress" />
+
+                <Button
+                    android:id="@+id/sta_location"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="#063E9F"
+                    android:text="위치선택" />
 
             </LinearLayout>
 
@@ -95,7 +104,7 @@
                     android:id="@+id/reservYear"
                     android:layout_width="110dp"
                     android:layout_height="42dp"
-                    android:entries="@array/year2"
+                    android:entries="@array/year"
                     android:spinnerMode="dropdown" />
 
                 <Spinner
@@ -150,18 +159,26 @@
                 <TextView
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="60dp"
                     android:text="도착 장소"
                     android:textColor="#000000"
                     android:textSize="17dp"
                     android:typeface="sans" />
 
                 <EditText
+                    android:freezesText="true"
                     android:id="@+id/arrive_location"
-                    android:layout_width="154dp"
+                    android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textEmailAddress" />
+
+                <Button
+                    android:id="@+id/arr_location"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="#063E9F"
+                    android:text="위치선택" />
             </LinearLayout>
 
             <LinearLayout
@@ -179,7 +196,6 @@
                     android:typeface="sans" />
 
                 <EditText
-                    android:text="1"
                     android:id="@+id/passenger"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"

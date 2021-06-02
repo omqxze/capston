@@ -7,9 +7,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.example.capston.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.gson.JsonObject;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,6 +25,7 @@ import Board.BoardAPI;
 import Board.BoardMainAdapter;
 import Reserve.Reserve;
 import Retrofit.conRetrofit;
+import lombok.SneakyThrows;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,7 +34,9 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
         ActivityMainBinding binding;
         ArrayList<JSONObject> ar=new ArrayList<>();
+        ArrayList<JSONObject> ar2=new ArrayList<>();
 
+        @SneakyThrows
         @SuppressLint("ClickableViewAccessibility")
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent(MainActivity.this, InfoActivity.class);
                         startActivity(intent);
                 });
+int[] a={R.id.postname,R.id.postname2,R.id.postname3,R.id.postname4};
 
                 BoardAPI clientt = conRetrofit.getApiClient().create(BoardAPI.class);
                 Call<ResponseBody> call = clientt.getJsonString();
@@ -51,10 +57,16 @@ public class MainActivity extends AppCompatActivity {
                                         String result = response.body().string();
                                         try {
                                                 JSONArray jsonArray = new JSONArray(result);
-                                                for(int i = jsonArray.length()-1; i>=jsonArray.length()-3 ; i--){
+                                                int b=0;
+                                                for(int i = jsonArray.length()-1; i>=0 ; i--){
                                                         JSONObject jsonObject = jsonArray.getJSONObject(i);
                                                         ar.add(jsonObject);
                                                         Log.e("이거 오는지",ar.toString());
+                                                        String startArea=jsonObject.getString("startArea");
+                                                        String endArea=jsonObject.getString("endArea");
+                                                        TextView textView1=(TextView)findViewById(a[b]);
+                                                        textView1.setText(startArea+"에서 "+endArea+"까지");
+                                                        b++;
                                                 }
                                         } catch (JSONException e) {
                                                 e.printStackTrace();
@@ -70,14 +82,7 @@ public class MainActivity extends AppCompatActivity {
                                 Log.e("실패 : ", t.getLocalizedMessage());
                         }
                 });
-                BoardMainAdapter boAd=new BoardMainAdapter(getApplicationContext(),ar);
-                binding.listview.setAdapter(boAd);
-                binding.listview.setOnItemClickListener((parent, view, position, id) -> {
-                        Intent intent = new Intent(this, BoardDetailActivity.class);
-                        JSONObject jo=boAd.getItem(position);
-                        intent.putExtra("data", jo.toString());
-                        startActivityForResult(intent, 1103);
-                });
+
 
                 SharedPreferences pref = getSharedPreferences("mine", MODE_PRIVATE);
                 String userId = pref.getString("userId", "");
@@ -102,19 +107,19 @@ public class MainActivity extends AppCompatActivity {
                                                         for (int i = jsonArray.length()-1; i>=0 ; i--) {
                                                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                                                                 Log.v("예약목록", jsonObject.toString());
-                                                                ar.add(jsonObject);
+                                                                ar2.add(jsonObject);
                                                         }
                                                         if (jsonArray.length() == 1) {
-                                                                JSONObject jo = ar.get(0);
+                                                                JSONObject jo = ar2.get(0);
                                                                 binding.rsv1.setText(jo.getString("startArea")+"에서 "+jo.getString("endArea")+"까지");
                                                                 binding.rsv2.setText("출발시간 : "+jo.getString("startDateTime"));
                                                         }
                                                         else {
-                                                                JSONObject jo = ar.get(0);
+                                                                JSONObject jo = ar2.get(0);
                                                                 binding.rsv1.setText(jo.getString("startArea")+"에서 "+jo.getString("endArea")+"까지");
                                                                 binding.rsv2.setText("출발시간 : "+jo.getString("startDateTime"));
 
-                                                                jo = ar.get(1);
+                                                                jo = ar2.get(1);
                                                                 binding.rsv3.setText(jo.getString("startArea")+"에서 "+jo.getString("endArea")+"까지");
                                                                 binding.rsv4.setText("출발시간 : "+jo.getString("startDateTime"));
                                                         }

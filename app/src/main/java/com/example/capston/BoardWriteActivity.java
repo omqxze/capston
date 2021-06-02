@@ -49,7 +49,15 @@ public class BoardWriteActivity extends AppCompatActivity {
 
         SharedPreferences pref = getSharedPreferences("mine", MODE_PRIVATE);
         String userId = pref.getString("userId", "");
+/*
+        Intent secondIntent = getIntent();
+        String start_location = secondIntent.getStringExtra("start_location");
+        binding.startLocation.setText(start_location);
 
+        Intent thirdIntent = getIntent();
+        String end_location = thirdIntent.getStringExtra("end_location");
+        binding.arriveLocation.setText(end_location);
+*/
         // Toolbar 활성화
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -82,6 +90,14 @@ public class BoardWriteActivity extends AppCompatActivity {
         });
         binding.reservYear.setSelection(1);
         binding.reservMonth.setSelection(5);
+        binding.staLocation.setOnClickListener(view -> {
+            Intent intent = new Intent(BoardWriteActivity.this, MapActivity.class);
+            startActivityForResult(intent,2);
+        });
+        binding.arrLocation.setOnClickListener(view -> {
+            Intent intent = new Intent(BoardWriteActivity.this, MapActivity2.class);
+            startActivityForResult(intent,3);
+        });
         binding.write.setOnClickListener(view->{
             String startArea = binding.startLocation.getText().toString();
             String startDateTime = value(binding.reservYear)+":"+value(binding.reservMonth)+":"+value(binding.reservDay)+" "+value(binding.reservHour)+":"+value(binding.reservMinute)+":00";
@@ -147,7 +163,18 @@ public class BoardWriteActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
+        }else if(requestCode==2){
+            if (resultCode==RESULT_OK){
+                String result=data.getStringExtra("start_location");
+                binding.startLocation.setText(result);
+            }
+        }
+        else if(requestCode==3){
+            if (resultCode==RESULT_OK){
+                String result=data.getStringExtra("end_location");
+                binding.arriveLocation.setText(result);
+            }
         }
     }
 
-    }
+}
