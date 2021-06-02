@@ -22,6 +22,7 @@ import retrofit2.Response;
 
 public class MyPageActivity extends AppCompatActivity {
     ActivityMypageBinding binding;
+    String userStunum;
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -83,7 +84,7 @@ public class MyPageActivity extends AppCompatActivity {
         call.enqueue(new Callback<MyPageInfo>() {
             @Override
             public void onResponse(Call<MyPageInfo> call, Response<MyPageInfo> response) {
-                String userStunum = response.body().getUserStunum();
+                userStunum = response.body().getUserStunum();
                 binding.userId3.setText(userId);
                 binding.userPass3.setText(userPass);
                 binding.userStunum.setText(userStunum);
@@ -97,6 +98,9 @@ public class MyPageActivity extends AppCompatActivity {
 
         binding.btnEditfinish.setOnClickListener(view->{
             Intent intent = new Intent(MyPageActivity.this, EditMyPageActivity.class);
+            intent.putExtra("userId",userId);
+            intent.putExtra("userPass",userPass);
+            intent.putExtra("userStunum",userStunum);
             startActivity(intent);
         });
     }

@@ -33,6 +33,7 @@ import retrofit2.Response;
 public class BoardActivity extends AppCompatActivity {
     ActivityBoardBinding binding;
     ArrayList<JSONObject> ar=new ArrayList<>();
+    BoardAdapter boAd;
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -97,7 +98,10 @@ public class BoardActivity extends AppCompatActivity {
                         for(int i = jsonArray.length()-1; i>=0 ; i--){
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
                             ar.add(jsonObject);
+                            Log.e("규일이거",jsonObject.toString());
                         }
+                         boAd=new BoardAdapter(getApplicationContext(),ar);
+                        binding.listview.setAdapter(boAd);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -113,13 +117,13 @@ public class BoardActivity extends AppCompatActivity {
             }
         });
 
-        BoardAdapter boAd=new BoardAdapter(getApplicationContext(),ar);
-        binding.listview.setAdapter(boAd);
+
 
         binding.listview.setOnItemClickListener((parent, view, position, id) -> {
             Intent intent = new Intent(this, BoardDetailActivity.class);
             JSONObject jo=boAd.getItem(position);
             intent.putExtra("data", jo.toString());
+
             startActivityForResult(intent, 1103);
         });
 

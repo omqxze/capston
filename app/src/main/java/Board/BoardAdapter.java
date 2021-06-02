@@ -1,6 +1,7 @@
 package Board;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,8 +52,11 @@ public class BoardAdapter extends BaseAdapter {
     public View getView(int po, View cview, ViewGroup parent){
         View view=infla.inflate(R.layout.listview_custom,null);
         String startArea=info.get(po).get("startArea").toString();
+        Log.e("테스트1",startArea);
         String endArea=info.get(po).get("endArea").toString();
+        Log.e("테스트2",endArea);
         String contents=info.get(po).get("contents").toString();
+        Log.e("테스트3",contents);
         TextView textView1=(TextView)view.findViewById(R.id.PostName);
         textView1.setText(startArea+"에서 "+endArea+"까지");
         TextView textView2=(TextView)view.findViewById(R.id.postContents);

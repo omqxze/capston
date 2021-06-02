@@ -25,6 +25,9 @@ public class EditMyPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding= DataBindingUtil.setContentView(this,R.layout.activity_editmypage);
+        Intent intent=new Intent();
+        binding.userId3.setText(intent.getStringExtra("userId"));
+        binding.userStunum.setText(intent.getStringExtra("userStunum"));
         // Toolbar 활성화
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -33,8 +36,8 @@ public class EditMyPageActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.show:
-                    Intent intent = new Intent(EditMyPageActivity.this, BoardActivity.class);
-                    startActivity(intent);
+                    Intent intent6 = new Intent(EditMyPageActivity.this, BoardActivity.class);
+                    startActivity(intent6);
                     break;
                 case R.id.write:
                     Intent intent2 = new Intent(EditMyPageActivity.this, QRCodeActivity.class);
@@ -56,13 +59,13 @@ public class EditMyPageActivity extends AppCompatActivity {
             return false;
         });
         binding.mypage.setOnClickListener(view->{
-            Intent intent = new Intent(this, InfoActivity.class);
-            startActivity(intent);
+            Intent intentt = new Intent(this, InfoActivity.class);
+            startActivity(intentt);
         });
 
         binding.btnEditfinish.setOnClickListener(view->{
-            Intent intent = new Intent(EditMyPageActivity.this, MyPageActivity.class);
-            startActivity(intent);
+            Intent intenttt = new Intent(EditMyPageActivity.this, MyPageActivity.class);
+            startActivity(intenttt);
             finish();
         });
     }
